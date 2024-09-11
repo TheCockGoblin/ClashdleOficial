@@ -6,4 +6,23 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Views\Home\Downloads\**" />
+    <Content Remove="Views\Home\Downloads\**" />
+    <EmbeddedResource Remove="Views\Home\Downloads\**" />
+    <None Remove="Views\Home\Downloads\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\clash-royale-mother-witch-s3kj53vvsvaunvci.jpg" />
+    <Content Remove="wwwroot\css\m72NFZ7.png" />
+    <Content Remove="wwwroot\css\Untitled-design-92.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\clash-royale-mother-witch-s3kj53vvsvaunvci.jpg" />
+    <None Include="wwwroot\css\m72NFZ7.png" />
+    <None Include="wwwroot\css\Untitled-design-92.jpg" />
+  </ItemGroup>
+
 </Project>
