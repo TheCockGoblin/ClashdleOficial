@@ -1,40 +1,49 @@
 ﻿@model List<clashclash.Models.CardModel>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - clashclash</title>
+    <link rel="stylesheet" href="~/css/paginas.css" />
+</head>
 
-<h2>Cartas :)</h2>
-<input type="text" id="searchInput" placeholder="Pesquise" class="barraPesquisa">
-
-<table id="cardTable">
-    <thead>
-        <tr>
-            <th>Escreva uma carta</th>
-        </tr>
-    </thead>
-    <tbody>
+<body>
+    <div class="tudo" >
+    <h2>Cartas :)</h2>
+    <input type="text" id="searchInput" placeholder="Pesquise" class="barraPesquisa">
+    <table id="cardTable">
+        <thead>
+            <tr>
+                <th>Escreva uma carta</th>
+            </tr>
+        </thead>
+        <tbody>
             
-        @if (Model != null && Model.Any())
-        {
-            foreach (var item in Model)
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td><a id="selectCard">@item.Name</a></td>
+                        <td><p id="stats">@item.Id</p></td>
+                        <td><p id="stats">@item.maxlevel</p></td>
+                        <td><p id="stats">@item.maxevolutionlevel</p></td>
+                        <td><p id="stats">@item.elixircost</p></td>
+                        <td><p id="stats">@item.Rarity</p></td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td><a id="selectCard">@item.Name</a></td>
-                    <td><p id="stats">@item.Id</p></td>
-                    <td><p id="stats">@item.maxlevel</p></td>
-                    <td><p id="stats">@item.maxevolutionlevel</p></td>
-                    <td><p id="stats">@item.elixircost</p></td>
-                    <td><p id="stats">@item.Rarity</p></td>
+                    <td colspan="7">Nenhum card cadastrado</td>
                 </tr>
             }
-        }
-        else
-        {
-            <tr>
-                <td colspan="7">Nenhum card cadastrado</td>
-            </tr>
-        }
 
-    </tbody>
-</table>
-
+        </tbody>
+    </table>
+    </div>
+</body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     var tableBody = $('#cardTable tbody');
@@ -148,3 +157,4 @@
         });
     });
 </script>
+</html>

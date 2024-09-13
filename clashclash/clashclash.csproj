@@ -22,6 +22,7 @@
   <ItemGroup>
     <None Include="wwwroot\css\clash-royale-mother-witch-s3kj53vvsvaunvci.jpg" />
     <None Include="wwwroot\css\m72NFZ7.png" />
+    <None Include="wwwroot\css\paginas.css" />
     <None Include="wwwroot\css\Untitled-design-92.jpg" />
   </ItemGroup>
 
