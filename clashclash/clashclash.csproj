@@ -14,6 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Daily\daily.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Daily\daily.cshtml" />
     <Content Remove="wwwroot\css\clash-royale-mother-witch-s3kj53vvsvaunvci.jpg" />
     <Content Remove="wwwroot\css\m72NFZ7.png" />
     <Content Remove="wwwroot\css\Untitled-design-92.jpg" />
