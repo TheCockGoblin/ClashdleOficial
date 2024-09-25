@@ -52,7 +52,8 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 7,        
           Medium = "https://api-assets.clashroyale.com/cards/300/MlArURKhn_zWAZY-Xj1qIRKLVKquarG25BXDjUQajNs.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          maxevolutionlevel = 1
         },
         
         new CardModel
@@ -569,7 +570,8 @@ namespace clashclash.Controllers
           maxlevel = 6,
           elixircost = 7,        
           Medium = "https://api-assets.clashroyale.com/cards/300/O2NycChSNhn_UK9nqBXUhhC_lILkiANzPuJjtjoz0CE.png",
-          Rarity = "legendary"
+          Rarity = "legendary",
+          maxevolutionlevel = 1
         },
         
         new CardModel

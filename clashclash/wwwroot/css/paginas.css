@@ -2,5 +2,86 @@
     background-image: url("../css/m72NFZ7.png");
 }
 
+#ganhou
+{
+    display: none;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Começa invisível */
+    }
+
+    100% {
+        opacity: 1; /* Termina visível */
+    }
+}
+
+.CartaTD,
+.CartaTH {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    color: chartreuse;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Altura da CartaTD */
+    width: 250px; /* Largura da CartaTD */
+    background-color: lightyellow;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 0.9s forwards; /* Aplica a animação */
+}
+
+.CartaTH {
+    height: 250px; /* Altura da CartaTH */
+}
+
+.Mae {
+    gap: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px; /* Altura mínima */
+}
+
+/* Para garantir que a animação ocorra ao carregar a página */
+.CartaTD:nth-child(1),
+.CartaTH {
+    animation-delay: 0.5s; /* Atraso para a CartaTH */
+}
+
+.CartaTD {
+    animation-delay: 0.5s; /* Atraso para a CartaTD */
+}
+
+.barraPesquisa {
+    outline:none;
+    width: 300px;
+}
+
+.selectCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    height: 50px;
+    width: 300px;
+}
+
+.selectCard:hover{
+    background-color:#808080;
+}
+
+.dropdown{
+    position:absolute;
+    z-index:9999;
+    padding:0;
+    margin:0;
+    align-items:left;
+    list-style:none;    
+}
 
 

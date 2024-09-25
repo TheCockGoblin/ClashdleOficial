@@ -1,15 +1,158 @@
 ﻿@model List<clashclash.Models.CardModel>
-<link rel="stylesheet" href="../wwwroot/css/paginas.css">
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> - clashclash</title>
+    <link rel="stylesheet" href="~/css/paginas.css" />
+</head>
 
-<html>
-    <head><title></title></head>
-    <body>
+<body>
+    <div class="tudo">
+        <h2>Carta diária :)</h2>
+        <input type="text" id="searchInput" placeholder="Insira uma carta" class="barraPesquisa" autocomplete="off">
+        <ul class="dropdown" id="dropdown">
+        </ul>
+        <table id="cardTable">
 
-        <h2>
-            cu
+            <tbody class="BodyCartas">
 
-        </h2>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><a class="aSelect" id="selectCard">@item.Name</a></td>
+                            <td><p id="stats">@item.Id</p></td>
+                            <td><p id="stats">@item.maxlevel</p></td>
+                            <td><p id="stats">@item.maxevolutionlevel</p></td>
+                            <td><p id="stats">@item.elixircost</p></td>
+                            <td><p id="stats">@item.Rarity</p></td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7">Nenhum card cadastrado</td>
+                    </tr>
+                }
 
-
-    </body>
+            </tbody>
+        </table>
+        <div id="ganhou">parabéns!!!!!!!!!!!</div>
+    </div>
+</body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var tableBody = $('#cardTable tbody');
+    var dados = $('#stats');
+
+    var correctId;
+    var correctML;
+    var correctMEL;
+    var correctEC;
+
+    dados.empty();
+    tableBody.empty();
+
+    $(document).ready(function () {
+        function carregarCardPorId(id) {
+            $.ajax({
+                url: '@Url.Action("GetCardById", "Card")', // Assumindo que você tem uma ação para buscar o card pelo ID
+                type: 'GET',
+                data: { id: id },
+                success: function (data) {
+                    correctId = data.id;
+                    correctML = data.maxlevel;
+                    correctMEL = data.maxevolutionlevel;
+                    correctEC = data.elixircost;
+
+                    console.log(data.name);
+                }
+            });
+        }
+        var cardToday = carregarCardPorId(26000000);
+
+        $('#searchInput').on('keyup', function () {
+            $('#dropdown').empty();
+            var query = $(this).val();
+
+            if (query) {
+                $.ajax({
+                    url: '@Url.Action("Search", "Card")',
+                    type: 'GET',
+                    data: { query: query },
+                    success: function (data) {
+
+                        if (data.length > 0) {
+                            $.each(data, function (index, item) {
+
+                                var row = `
+                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" >${item.name}</button></li>
+                                    `;
+
+                                $('#dropdown').append(row);
+                            });
+                            $('#dropdown').show();
+                        } else {
+                            $('#dropdown').hide();
+                        }
+                    }
+                });
+            } else {
+                $('#dropdown').hide(); // Esconde se o campo de pesquisa estiver vazio
+            }
+        });
+        $(document).on('click', '.selectCard', function () {
+            $('#dropdown').hide();
+            var card = $(this);
+            var cardId = card.data('id');
+            var cardName = card.data('name');
+            var cardML = card.data('maxlevel');
+            var cardMEL = card.data('maxevolutionlevel');
+            var cardElixirCost = card.data('elixircost');
+            var cardRarity = card.data('rarity');
+            console.log('Nome da carta selecionada: ' + cardName);
+            var codigo = `
+                                        <thead>
+                                            <tr class= "Mae">
+
+                                                <th class="CartaTH">Nome</th>
+                                                <th class="CartaTH">Nível Máximo</th>
+                                                <th class="CartaTH">Nível Máximo de Evolução</th>
+                                                <th class="CartaTH">Custo de Elixir</th>
+                                                <th class="CartaTH">Raridade</th>
+                                            </tr>
+                                        </thead>
+                                        <tr class="Mae">
+                                        <td class="CartaTD"><p>${cardName}</p></td>
+                                        <td class="CartaTD"><p>${cardML}</p></td>
+                                        <td class="CartaTD" ><p>${cardMEL}</p></td>
+                                        <td class="CartaTD"><p>${cardElixirCost}</p></td>
+                                        <td class="CartaTD"><p>${cardRarity}</p></td>
+                                    </tr>`;
+            tableBody.append(codigo);
+
+            if (cardId == correctId) {
+                console.log("poggers");
+                document.getElementById("ganhou").style.display = "flex";
+
+            }
+            if (cardML == correctML) {
+                console.log("ml correto");
+
+            }
+            if (cardElixirCost == correctEC) {
+                console.log("ec correto");
+
+            }
+            if (cardMEL == correctMEL) {
+                console.log("mel correto");
+
+            }
+        });
+    });
+</script>
+

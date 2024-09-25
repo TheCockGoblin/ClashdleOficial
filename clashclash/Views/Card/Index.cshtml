@@ -7,43 +7,44 @@
     <link rel="stylesheet" href="~/css/paginas.css" />
 </head>
 
-<body>
-    <div class="tudo" >
-    <h2>Cartas :)</h2>
-    <input type="text" id="searchInput" placeholder="Pesquise" class="barraPesquisa">
-    <table id="cardTable">
-        <thead>
-            <tr>
-                <th>Escreva uma carta</th>
-            </tr>
-        </thead>
-        <tbody>
+    <body>
+        <div class="tudo" >
+        <h2>Modo Ilimitado :)</h2>
+        <input type="text" id="searchInput" placeholder="Insira uma carta" class="barraPesquisa" autocomplete="off">
+        <ul class="dropdown" id="dropdown">
+
+        </ul>
+        <table id="cardTable">
             
-            @if (Model != null && Model.Any())
-            {
-                foreach (var item in Model)
+            <tbody class="BodyCartas">
+            
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><a class="aSelect" id="selectCard">@item.Name</a></td>
+                            <td><p id="stats">@item.Id</p></td>
+                            <td><p id="stats">@item.maxlevel</p></td>
+                            <td><p id="stats">@item.maxevolutionlevel</p></td>
+                            <td><p id="stats">@item.elixircost</p></td>
+                            <td><p id="stats">@item.Rarity</p></td>
+                        </tr>
+                    }
+                }
+                else
                 {
                     <tr>
-                        <td><a id="selectCard">@item.Name</a></td>
-                        <td><p id="stats">@item.Id</p></td>
-                        <td><p id="stats">@item.maxlevel</p></td>
-                        <td><p id="stats">@item.maxevolutionlevel</p></td>
-                        <td><p id="stats">@item.elixircost</p></td>
-                        <td><p id="stats">@item.Rarity</p></td>
+                        <td colspan="7">Nenhum card cadastrado</td>
                     </tr>
                 }
-            }
-            else
-            {
-                <tr>
-                    <td colspan="7">Nenhum card cadastrado</td>
-                </tr>
-            }
 
-        </tbody>
-    </table>
-    </div>
-</body>
+            </tbody>
+        </table>
+        <div id="ganhou">parabéns!!!!!!!!!!!</div>
+        </div>
+    </body>
+</html>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     var tableBody = $('#cardTable tbody');
@@ -76,39 +77,38 @@
         var cardToday = carregarCardPorId(26000000);
 
         $('#searchInput').on('keyup', function () {
-            tableBody.empty();
+            $('#dropdown').empty();
             var query = $(this).val();
 
-            $.ajax({
-                url: '@Url.Action("Search", "Card")',
-                type: 'GET',
-                data: { query: query },
-                success: function (data) {
+            if (query) {
+                $.ajax({
+                    url: '@Url.Action("Search", "Card")',
+                    type: 'GET',
+                    data: { query: query },
+                    success: function (data) {
 
-                    if (data.length > 0) {
-                        $.each(data, function (index, item) {
-                            
-                            var row = `
-                                <thead>
-                                    <tr>
-                                        <th>Nome</th>
-                                    </tr>
-                                </thead>
-                                <tr>
-                                                    <td><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" >${item.name}</button></td>
-                            </tr>`;
-                            tableBody.append(row);
-                        });
-                    } else {
-                        tableBody.append('<tr><td colspan="7">Nenhum card cadastrado</td></tr>');
+                        if (data.length > 0) {
+                            $.each(data, function (index, item) {
+
+                                var row = `
+                                         <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" >${item.name}</button></li>
+                                `; 
+
+                                $('#dropdown').append(row);
+                            });
+                            $('#dropdown').show();
+                        } else {
+                            $('#dropdown').hide();
+                        }
                     }
-              
-                }
-            });
+                });
+            } else {
+                $('#dropdown').hide(); // Esconde se o campo de pesquisa estiver vazio
+            }        
         });
         $(document).on('click', '.selectCard', function () 
         {
-            tableBody.empty();
+            $('#dropdown').hide();
             var card = $(this);
             var cardId = card.data('id');
             var cardName = card.data('name');
@@ -119,27 +119,28 @@
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
                                     <thead>
-                                        <tr>
-                                            <th>Nome</th>
-                                            <th>Nível Máximo</th>
-                                            <th>Nível Máximo de Evolução</th>
-                                            <th>Custo de Elixir</th>
-                                            <th>Raridade</th>
-                                            <th></th>
+                                        <tr class= "Mae">
+
+                                            <th class="CartaTH">Nome</th>
+                                            <th class="CartaTH">Nível Máximo</th>
+                                            <th class="CartaTH">Nível Máximo de Evolução</th>
+                                            <th class="CartaTH">Custo de Elixir</th>
+                                            <th class="CartaTH">Raridade</th>
                                         </tr>
                                     </thead>
-                                    <tr>
-                                    <td><p>${cardName}</p></td>
-                                    <td><p>${cardML}</p></td>
-                                    <td><p>${cardMEL}</p></td>
-                                    <td><p>${cardElixirCost}</p></td>
-                                    <td><p>${cardRarity}</p></td>
+                                    <tr class="Mae">
+                                    <td class="CartaTD"><p>${cardName}</p></td>
+                                    <td class="CartaTD"><p>${cardML}</p></td>
+                                    <td class="CartaTD" ><p>${cardMEL}</p></td>
+                                    <td class="CartaTD"><p>${cardElixirCost}</p></td>
+                                    <td class="CartaTD"><p>${cardRarity}</p></td>
                                 </tr>`;
             tableBody.append(codigo);
 
             if (cardId == correctId) 
             {
                 console.log("poggers");
+                document.getElementById("ganhou").style.display = "flex";
                 
             }
             if (cardML == correctML) {
@@ -157,4 +158,4 @@
         });
     });
 </script>
-</html>
+
