@@ -54,6 +54,10 @@
     var correctML;
     var correctMEL;
     var correctEC;
+    var correctRar;
+
+    var round = 0;
+    var vidas = 5;
 
     dados.empty();
     tableBody.empty();
@@ -69,6 +73,7 @@
                     correctML = data.maxlevel;
                     correctMEL = data.maxevolutionlevel;
                     correctEC = data.elixircost;
+                    correctRar = data.rarity;
 
                     console.log(data.name);
                 }
@@ -108,7 +113,10 @@
         });
         $(document).on('click', '.selectCard', function () 
         {
+            round++;
+            vidas--;
             $('#dropdown').hide();
+
             var card = $(this);
             var cardId = card.data('id');
             var cardName = card.data('name');
@@ -116,13 +124,17 @@
             var cardMEL = card.data('maxevolutionlevel');
             var cardElixirCost = card.data('elixircost');
             var cardRarity = card.data('rarity');
+
+            var temEvo = cardMEL == 0 ? "Não possui evolução" : "Possui evolução";
+
+            
+
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
                                     <thead>
                                         <tr class= "Mae">
 
                                             <th class="CartaTH">Nome</th>
-                                            <th class="CartaTH">Nível Máximo</th>
                                             <th class="CartaTH">Nível Máximo de Evolução</th>
                                             <th class="CartaTH">Custo de Elixir</th>
                                             <th class="CartaTH">Raridade</th>
@@ -130,31 +142,48 @@
                                     </thead>
                                     <tr class="Mae">
                                     <td class="CartaTD"><p>${cardName}</p></td>
-                                    <td class="CartaTD"><p>${cardML}</p></td>
-                                    <td class="CartaTD" ><p>${cardMEL}</p></td>
-                                    <td class="CartaTD"><p>${cardElixirCost}</p></td>
-                                    <td class="CartaTD"><p>${cardRarity}</p></td>
+                                        <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
+                                        <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
+                                        <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                        <td><p>${vidas}</p></td>
                                 </tr>`;
             tableBody.append(codigo);
 
-            if (cardId == correctId) 
-            {
-                console.log("poggers");
-                document.getElementById("ganhou").style.display = "flex";
-                
-            }
-            if (cardML == correctML) {
-                console.log("ml correto");
+            if (vidas >= 0) {
 
-            }
-            if (cardElixirCost == correctEC) {
-                console.log("ec correto");
+                if (cardId == correctId) {
+                    console.log("poggers");
+                    document.getElementById("ganhou").style.display = "flex";
+                    document.getElementsByClassName("CartaTD").style.backgroundColor = "green";
 
-            }
-            if (cardMEL == correctMEL) {
-                console.log("mel correto");
+                }
 
+                if (cardElixirCost == correctEC) {
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "green";
+                    console.log("ec correto");
+
+                }
+                else
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "red";
+
+                if (cardMEL == correctMEL) {
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "green";
+                    console.log("mel correto");
+
+                }
+
+                else
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "red";
+
+                if (cardRarity == correctRar) {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "green";
+                }
+                else
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "red";
             }
+            else
+                console.log("perdeu lkkkkkkkkkkkkkkkkklh");
+
         });
     });
 </script>
