@@ -68,6 +68,7 @@
                     correctML = data.maxlevel;
                     correctMEL = data.maxevolutionlevel;
                     correctEC = data.elixircost;
+                    image = data.medium;
 
                     console.log(data.name);
                 }
@@ -90,7 +91,7 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" >${item.name}</button></li>
+                                                 <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
                                     `;
 
                                 $('#dropdown').append(row);
@@ -114,6 +115,7 @@
             var cardMEL = card.data('maxevolutionlevel');
             var cardElixirCost = card.data('elixircost');
             var cardRarity = card.data('rarity');
+            var image = card.data('medium');
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
                                         <thead>
@@ -132,6 +134,7 @@
                                         <td class="CartaTD" ><p>${cardMEL}</p></td>
                                         <td class="CartaTD"><p>${cardElixirCost}</p></td>
                                         <td class="CartaTD"><p>${cardRarity}</p></td>
+                                        <img src="${image}">
                                     </tr>`;
             tableBody.append(codigo);
 

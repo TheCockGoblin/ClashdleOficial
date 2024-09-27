@@ -29,6 +29,7 @@
                             <td><p id="stats">@item.maxevolutionlevel</p></td>
                             <td><p id="stats">@item.elixircost</p></td>
                             <td><p id="stats">@item.Rarity</p></td>
+                            <td><p id="stats">@item.Medium</p></td>
                         </tr>
                     }
                 }
@@ -96,7 +97,7 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                         <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" >${item.name}</button></li>
+                                         <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
                                 `; 
 
                                 $('#dropdown').append(row);
@@ -124,6 +125,9 @@
             var cardMEL = card.data('maxevolutionlevel');
             var cardElixirCost = card.data('elixircost');
             var cardRarity = card.data('rarity');
+            var image = card.data('medium');
+
+            console.log(image);
 
             var temEvo = cardMEL == 0 ? "Não possui evolução" : "Possui evolução";
 
@@ -141,12 +145,16 @@
                                         </tr>
                                     </thead>
                                     <tr class="Mae">
-                                    <td class="CartaTD"><p>${cardName}</p></td>
+
+                                            <td><p style=" z-index: 1000; position: absolute; color: white; margin: 0;">${cardName}</p><img src="${image}" alt="Alternate Text" id="cardImage"></td>
+
+
                                         <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
                                         <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
                                         <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
-                                        <td><p>${vidas}</p></td>
-                                </tr>`;
+                                </tr>
+                                    <p>${vidas}</p>`;
+                                 
             tableBody.append(codigo);
 
             if (vidas >= 0) {
