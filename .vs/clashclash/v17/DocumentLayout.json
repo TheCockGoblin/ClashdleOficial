@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\card\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\controllers\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\controllers\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\aluno\\source\\repos\\clashdleoficial\\clashclash\\models\\cardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\models\\cardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\models\\cardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\models\\cardmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +34,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CardModel.cs",
               "DocumentMoniker": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\Models\\CardModel.cs",
               "RelativeDocumentMoniker": "clashclash\\Models\\CardModel.cs",
@@ -42,31 +42,30 @@
               "RelativeToolTip": "clashclash\\Models\\CardModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T11:20:31.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-27T11:20:31.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\Views\\Daily\\Index.cshtml",
               "RelativeDocumentMoniker": "clashclash\\Views\\Daily\\Index.cshtml",
               "ToolTip": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\Views\\Daily\\Index.cshtml",
               "RelativeToolTip": "clashclash\\Views\\Daily\\Index.cshtml",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAAAAsAAAAEAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAAAAsAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-25T14:24:41.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "paginas.css",
               "DocumentMoniker": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
               "RelativeDocumentMoniker": "clashclash\\wwwroot\\css\\paginas.css",
               "ToolTip": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
               "RelativeToolTip": "clashclash\\wwwroot\\css\\paginas.css",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAADsAAAARAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-13T11:03:21.401Z",
               "EditorCaption": ""
@@ -79,7 +78,7 @@
               "RelativeDocumentMoniker": "clashclash\\Views\\Card\\Index.cshtml",
               "ToolTip": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\Views\\Card\\Index.cshtml",
               "RelativeToolTip": "clashclash\\Views\\Card\\Index.cshtml",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAAAJQAAABdAAAA",
+              "ViewState": "AQIAAIgAAAAAAAAAAAA0wJQAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-06T10:27:12.966Z",
               "EditorCaption": ""

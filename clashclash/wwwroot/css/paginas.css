@@ -84,4 +84,9 @@
     list-style:none;    
 }
 
+#cardImage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
