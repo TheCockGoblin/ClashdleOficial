@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> - clashclash</title>
-    <link rel="stylesheet" href="~/css/paginas.css" />
+    <link rel="stylesheet" href="~/css/paginas.css"/>
 </head>
 
     <body>
@@ -134,7 +134,7 @@
             
 
             console.log('Nome da carta selecionada: ' + cardName);
-            var codigo = `
+            var codigo = `     
                                     <thead>
                                         <tr class= "Mae">
 
@@ -146,14 +146,11 @@
                                     </thead>
                                     <tr class="Mae">
 
-                                                <td><img src="${image}"  alt="Alternate Text" id="cardImage"><p style=" z-index: 1000; position: absolute; color: white; top: 50%; ">${cardName}</p> </img></td>
-
-
+                                        <td><img src="${image}"  alt="Alternate Text" id="cardImage"><p style=" z-index: 1000; position: absolute; color: white; top: 50%; ">${cardName}</p> </img></td>
                                         <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
                                         <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
                                         <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
-                                </tr>
-                                    <p>${vidas}</p>`;
+                                </tr>`;
                                  
             tableBody.append(codigo);
 
