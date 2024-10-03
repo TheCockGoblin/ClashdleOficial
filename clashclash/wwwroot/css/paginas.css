@@ -27,44 +27,49 @@
     }
 }
 
-.CartaTD{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-    color:fuchsia;
+.CartaTD { /*Parte de baixo*/
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    color:azure;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 200px; /* Altura da CartaTD */
-    width: 160px; /* Largura da CartaTD */
+    width: 200px; /* Largura da CartaTD */
     background-color: lightyellow;
     border-radius: 10px;
     text-align: center;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.9s forwards; /* Aplica a animação */
+    font-family: Algerian;
+    font-size: 2rem;
 }
 
-.CartaTH {
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-    color: fuchsia;
+.CartaTH { /*Parte de cima*/
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    color: darkblue;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60px; /* Altura da CartaTD */
-    width: 160px; /* Largura da CartaTD */
+    width: 200px; /* Largura da CartaTD */
     background-color: lightyellow;
     border-radius: 10px;
     text-align: center;
     margin-top: 100px;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.9s forwards; /* Aplica a animação */
+    font-family: Algerian;
+    font-size: 1.4rem;
 }
 
-.Mae {
-    gap: 5%;
+.Mae { /*engloba o TH e TD*/
+    gap: 90px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: 50px; /* Altura mínima */
+    width: 100%;
+    min-height: 150px; /* Altura mínima */
 }
 
 /* Para garantir que a animação ocorra ao carregar a página */

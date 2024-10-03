@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> - clashclash</title>
-    <link rel="stylesheet" href="~/css/paginas.css"/>
+    <link rel="stylesheet" href="~/css/paginas.css" />
 </head>
 
 <body>
     <div class="tudo">
-        <h2>Carta diária :)</h2>
-        <input type="text" id="searchInput" placeholder="Insira uma carta" class="barraPesquisa" autocomplete="off">
+        <h2>Daily Mode :)</h2>
+        <input type="text" id="searchInput" placeholder="Insert a Card" class="barraPesquisa" autocomplete="off">
         <ul class="dropdown" id="dropdown">
         </ul>
         <table id="cardTable">
@@ -28,6 +28,7 @@
                             <td><p id="stats">@item.maxevolutionlevel</p></td>
                             <td><p id="stats">@item.elixircost</p></td>
                             <td><p id="stats">@item.Rarity</p></td>
+                            <td><p id="stats">@item.Medium</p></td>
                         </tr>
                     }
                 }
@@ -53,6 +54,10 @@
     var correctML;
     var correctMEL;
     var correctEC;
+    var correctRar;
+
+    var round = 0;
+    var vidas = 5;
 
     dados.empty();
     tableBody.empty();
@@ -68,7 +73,7 @@
                     correctML = data.maxlevel;
                     correctMEL = data.maxevolutionlevel;
                     correctEC = data.elixircost;
-                    image = data.medium;
+                    correctRar = data.rarity;
 
                     console.log(data.name);
                 }
@@ -91,7 +96,7 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                                 <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
+                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
                                     `;
 
                                 $('#dropdown').append(row);
@@ -107,7 +112,10 @@
             }
         });
         $(document).on('click', '.selectCard', function () {
+            round++;
+            vidas--;
             $('#dropdown').hide();
+
             var card = $(this);
             var cardId = card.data('id');
             var cardName = card.data('name');
@@ -116,45 +124,69 @@
             var cardElixirCost = card.data('elixircost');
             var cardRarity = card.data('rarity');
             var image = card.data('medium');
+
+            console.log(image);
+
+            var temEvo = cardMEL == 0 ? "Don't have evolution" : "Have evolution";
+
+
+
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
                                         <thead>
                                             <tr class= "Mae">
 
-                                                <th class="CartaTH">Nome</th>
-                                                <th class="CartaTH">Nível Máximo</th>
-                                                <th class="CartaTH">Nível Máximo de Evolução</th>
-                                                <th class="CartaTH">Custo de Elixir</th>
-                                                <th class="CartaTH">Raridade</th>
+                                                <th class="CartaTH">Name</th>
+                                                <th class="CartaTH">Evolution</th>
+                                                <th class="CartaTH">Elixir Cost</th>
+                                                <th class="CartaTH">Rarity</th>
                                             </tr>
                                         </thead>
                                         <tr class="Mae">
-                                        <td class="CartaTD"><p>${cardName}</p></td>
-                                        <td class="CartaTD"><p>${cardML}</p></td>
-                                        <td class="CartaTD" ><p>${cardMEL}</p></td>
-                                        <td class="CartaTD"><p>${cardElixirCost}</p></td>
-                                        <td class="CartaTD"><p>${cardRarity}</p></td>
-                                        <img src="${image}">
+
+                                            <td><img src="${image}"  alt="Alternate Text" id="cardImage"></img><p style=" z-index: 1000; position: absolute; color: white; top: 50%; ">${cardName}</p></td>
+                                            <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
+                                            <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
+                                            <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
                                     </tr>`;
+
             tableBody.append(codigo);
 
-            if (cardId == correctId) {
-                console.log("poggers");
-                document.getElementById("ganhou").style.display = "flex";
+            if (vidas >= 0) {
 
-            }
-            if (cardML == correctML) {
-                console.log("ml correto");
+                if (cardId == correctId) {
+                    console.log("poggers");
+                    document.getElementById("ganhou").style.display = "flex";
+                    document.getElementsByClassName("CartaTD").style.backgroundColor = "green";
 
-            }
-            if (cardElixirCost == correctEC) {
-                console.log("ec correto");
+                }
 
-            }
-            if (cardMEL == correctMEL) {
-                console.log("mel correto");
+                if (cardElixirCost == correctEC) {
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "green";
+                    console.log("ec correto");
 
+                }
+                else
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "red";
+
+                if (cardMEL == correctMEL) {
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "green";
+                    console.log("mel correto");
+
+                }
+
+                else
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "red";
+
+                if (cardRarity == correctRar) {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "green";
+                }
+                else
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "red";
             }
+            else
+                console.log("perdeu lkkkkkkkkkkkkkkkkklh");
+
         });
     });
 </script>
