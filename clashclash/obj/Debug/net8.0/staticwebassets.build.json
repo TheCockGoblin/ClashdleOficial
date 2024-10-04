@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AnEFHE3TivYDAZIwkK0Ci3i5w3plNS7H5lftSLh71JI=",
+  "Hash": "5MYHvV3FsabKhIi/tfvFQC93h/IhbsSQMC0WaZ5m51M=",
   "Source": "clashclash",
   "BasePath": "_content/clashclash",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\clashclash.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\bottonStart.png",
+      "SourceId": "clashclash",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\",
+      "BasePath": "_content/clashclash",
+      "RelativePath": "css/bottonStart.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bottonStart.png"
     },
     {
       "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
