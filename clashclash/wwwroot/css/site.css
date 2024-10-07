@@ -26,7 +26,7 @@ h2 {
     font-size: 2rem;
     font-weight: 700;
     color: wheat;
-    text-shadow: 10px 10px 10px black;
+    text-shadow: 3px 3px 3px black;
     filter: blur(0.2px);
     animation: show 2s linear;
     transition: all 200ms linear;
@@ -76,7 +76,7 @@ body{
     font-size: 3.6rem;
     font-weight: 888;
     text-decoration: none;
-    color: wheat;
+    color:azure;
 }
 
 .botAdiv:hover{
@@ -95,12 +95,12 @@ body{
     font-size: 2.5rem;
     font-weight: 888;
     width: 400px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 20px;
 }
 
 .bots:hover{
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .bots:active {
