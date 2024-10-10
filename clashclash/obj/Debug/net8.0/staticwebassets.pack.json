@@ -9,12 +9,20 @@
       "PackagePath": "staticwebassets\\css\\bottonStart.png"
     },
     {
+      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\crownClash.png",
+      "PackagePath": "staticwebassets\\css\\crownClash.png"
+    },
+    {
       "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
       "PackagePath": "staticwebassets\\css\\paginas.css"
     },
     {
       "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\tower1.png",
+      "PackagePath": "staticwebassets\\css\\tower1.png"
     },
     {
       "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\favicon.ico",

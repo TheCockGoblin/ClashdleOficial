@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5MYHvV3FsabKhIi/tfvFQC93h/IhbsSQMC0WaZ5m51M=",
+  "Hash": "2PAoKkaOMHeWDeuuABD9lzvr/YBnzkknriR39pTJ8qo=",
   "Source": "clashclash",
   "BasePath": "_content/clashclash",
   "Mode": "Default",
@@ -74,6 +74,25 @@
       "OriginalItemSpec": "wwwroot\\css\\bottonStart.png"
     },
     {
+      "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\crownClash.png",
+      "SourceId": "clashclash",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\",
+      "BasePath": "_content/clashclash",
+      "RelativePath": "css/crownClash.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\crownClash.png"
+    },
+    {
       "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
       "SourceId": "clashclash",
       "SourceType": "Discovered",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\tower1.png",
+      "SourceId": "clashclash",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\",
+      "BasePath": "_content/clashclash",
+      "RelativePath": "css/tower1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\tower1.png"
     },
     {
       "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\favicon.ico",

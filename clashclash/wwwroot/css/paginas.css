@@ -5,15 +5,15 @@
     text-align: center;
 }
 
-#tudo{
+#tudo {
     display: flex;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    height: 100vh;
 }
 
-#ganhou
-{
+#ganhou {
     display: none;
 }
 
@@ -29,7 +29,7 @@
 
 .CartaTD { /*Parte de baixo*/
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    color:azure;
+    color: azure;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,7 +83,7 @@
 }
 
 .barraPesquisa {
-    margin-top: 30px; 
+    margin-top: 30px;
     padding: 8px;
     border: none;
     outline: none;
@@ -98,29 +98,117 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border:none;
+    border: none;
     height: 50px;
     width: 25vw;
 }
 
-.selectCard:hover{
-    background-color:#808080;
+.selectCard:hover {
+    background-color: #808080;
 }
 
-.dropdown{
-    position:absolute;
-    z-index:9999;
-    padding:0;
-    margin:0;
-    align-items:center;
-    list-style:none;    
-    left:37.4%;  
+.dropdown {
+    position: absolute;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    list-style: none;
+    left: 37.4%;
 }
 
-#cardImage{
+#cardImage {
     width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
+
+.imgP{
+    z-index:9999;
+    position:absolute;
+    align-items:center;
+    top: 60%;
+    left: 19.25%;
+    font-weight: bold;
+    color: lightyellow;
+}
+
+.vidasImg {
+    width: 80px;
+}
+
+.ganhou {
+    display: flex;
+    position: fixed;
+    width: 40vw;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #b7cce8;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+    .ganhou p {
+        text-align: center;
+        font-size: 5rem;
+        font-weight: bold;
+        color: #000000;
+        text-shadow: 2.5px 2.5px #000000;
+    }
+
+
+.perdeu {
+    display: none;
+    position: fixed;
+    width: 40vw;
+    height: 30vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+    .perdeu p {
+        text-align: center;
+        font-size: 5rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2.5px 2.5px #000000;
+    }
+
+.opcoes {
+    padding-top: 50px;
+}
+
+.btOpcoes {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 2.5px 2.5px #000000;
+    padding: 15px 30px 15px 30px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    background: #006400;
+    float: left;
+}
+
+    .btOpcoes:hover {
+        color: #ffffff;
+        background: #004400;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    }

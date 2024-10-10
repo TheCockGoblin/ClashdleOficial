@@ -4,20 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> - clashclash</title>
-    <link rel="stylesheet" href="~/css/paginas.css"/>
+    <link rel="stylesheet" href="~/css/paginas.css" />
 </head>
 
-    <body>
-        <div class="tudo" >
-        <h2>Unlimeted Mode :)</h2>
+<body>
+    <div class="tudo">
+        <h2>Unlimited Mode</h2>
         <input type="text" id="searchInput" placeholder="Insert a card" class="barraPesquisa" autocomplete="off">
         <ul class="dropdown" id="dropdown">
-
         </ul>
+
+        <div class="vidasDiv" id="vidasDiv">
+            <a><img src="/css/crownClash.png" class="vidasImg" id="vidasImgId" /></a>
+            <p id="vidasId"></p>
+        </div>
+
         <table id="cardTable">
-            
             <tbody class="BodyCartas">
-            
+
                 @if (Model != null && Model.Any())
                 {
                     foreach (var item in Model)
@@ -42,9 +46,21 @@
 
             </tbody>
         </table>
-        <div id="ganhou">parabéns!!!!!!!!!!!</div>
+        <div class="ganhou" id="ganhou">
+            <p>Congratulations!!!!!</p>
+            <div class="opcoes">
+                <a href="" class="btOpcoes"> Try again </a>
+            </div>
         </div>
-    </body>
+        <div class="perdeu" id="perdeu">
+            <p>GAME OVER</p>
+
+            <div class="opcoes">
+                <a href="" class="btOpcoes"> Try again </a>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -59,6 +75,14 @@
 
     var round = 0;
     var vidas = 5;
+
+    var imagemVidas = document.getElementById("vidasImgId");
+    const vidasDiv = document.getElementById("vidasDiv");
+    vidasDiv.innerHTML = '';
+    for (let i = 0; i < vidas; i++) {
+        const novaImagem = imagemVidas.cloneNode();
+        vidasDiv.appendChild(novaImagem);
+    }
 
     dados.empty();
     tableBody.empty();
@@ -97,8 +121,8 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                         <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
-                                `; 
+                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
+                                    `;
 
                                 $('#dropdown').append(row);
                             });
@@ -110,10 +134,9 @@
                 });
             } else {
                 $('#dropdown').hide(); // Esconde se o campo de pesquisa estiver vazio
-            }        
+            }
         });
-        $(document).on('click', '.selectCard', function () 
-        {
+        $(document).on('click', '.selectCard', function () {
             round++;
             vidas--;
             $('#dropdown').hide();
@@ -131,36 +154,43 @@
 
             var temEvo = cardMEL == 0 ? "does not have evolution" : "Does have evolution";
 
-            
+            console.log('vidas: ' + vidas);
 
             console.log('Nome da carta selecionada: ' + cardName);
-            var codigo = `     
-                                    <thead>
-                                        <tr class= "Mae">
+            var codigo = `
+                                        <thead>
+                                            <tr class= "Mae">
+                                                <th class="CartaTH">Name</th>
+                                                <th class="CartaTH">Evolution</th>
+                                                <th class="CartaTH">Elixir Cost</th>
+                                                <th class="CartaTH">Rarity</th>
+                                            </tr>
+                                        </thead>
+                                        <tr class="Mae">
 
-                                            <th class="CartaTH">Name</th>
-                                            <th class="CartaTH">Evolution</th>
-                                            <th class="CartaTH">Elixir Cost</th>
-                                            <th class="CartaTH">Rarity</th>
-                                        </tr>
-                                    </thead>
-                                    <tr class="Mae">
+                                            <td>${cardName}<img src="${image}" alt="${cardName}" id="cardImage${round}"/></td>
+                                            <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
+                                            <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
+                                            <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                    </tr>`;
 
-                                        <td><img src="${image}"  alt="Alternate Text" id="cardImage"><p style=" z-index: 1000; position: absolute; color: white; top: 50%; ">${cardName}</p> </img></td>
-                                        <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
-                                        <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
-                                        <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
-                                </tr>`;
-                                 
             tableBody.append(codigo);
 
-            if (vidas >= 0) {
+            vidasDiv.innerHTML = '';
+            for (let i = 0; i < vidas; i++) {
+                const novaImagem = imagemVidas.cloneNode();
+                vidasDiv.appendChild(novaImagem);
+            }
+
+            if (vidas > 0) {
 
                 if (cardId == correctId) {
                     console.log("poggers");
                     document.getElementById("ganhou").style.display = "flex";
-                    document.getElementsByClassName("CartaTD").style.backgroundColor = "green";
-
+                    const cartasTd = document.getElementsByClassName(`CartaTD${round}`);
+                    for (let i = 0; i < cartasTd.length; i++) {
+                        cartasTd[i].style.backgroundColor = "green";
+                    }
                 }
 
                 if (cardElixirCost == correctEC) {
@@ -168,8 +198,9 @@
                     console.log("ec correto");
 
                 }
-                else
+                else {
                     document.getElementById(`custoEl${round}`).style.backgroundColor = "red";
+                }
 
                 if (cardMEL == correctMEL) {
                     document.getElementById(`maxEL${round}`).style.backgroundColor = "green";
@@ -177,18 +208,21 @@
 
                 }
 
-                else
+                else {
                     document.getElementById(`maxEL${round}`).style.backgroundColor = "red";
+                }
 
                 if (cardRarity == correctRar) {
                     document.getElementById(`raridade${round}`).style.backgroundColor = "green";
                 }
-                else
+                else {
                     document.getElementById(`raridade${round}`).style.backgroundColor = "red";
+                }
             }
-            else
-                console.log("perdeu lkkkkkkkkkkkkkkkkklh");
-
+            else {
+                console.log("perdeu");
+                document.getElementById("perdeu").style.display = "flex";
+            }
         });
     });
 </script>
