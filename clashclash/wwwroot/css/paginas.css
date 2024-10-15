@@ -1,5 +1,6 @@
 ﻿body {
     background-image: url("../css/m72NFZ7.png");
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -62,12 +63,18 @@
     font-size: 1.4rem;
 }
 
+.BodyCartas{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap: 7vh
+}
+
 .Mae { /*engloba o TH e TD*/
-    gap: 90px;
+    gap: 8.5vw;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     min-height: 150px; /* Altura mínima */
 }
@@ -117,21 +124,11 @@
     left: 37.4%;
 }
 
-#cardImage {
+.cardImage {
     width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.imgP{
-    z-index:9999;
-    position:absolute;
-    align-items:center;
-    top: 60%;
-    left: 19.25%;
-    font-weight: bold;
-    color: lightyellow;
 }
 
 .vidasImg {
