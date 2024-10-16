@@ -136,7 +136,11 @@
             $('#dropdown').empty();
             var query = $(this).val();
 
-
+            $(document).on('click', function (event) {
+                if (!$(event.target).closest('#searchInput').length && !$(event.target).closest('#dropdown').length) {
+                    $('#dropdown').hide(); // Esconde o dropdown
+                }
+            });
 
             if (query) {
                 $.ajax({
@@ -197,7 +201,11 @@
                                                 </thead>
                                                 <tr class="Mae">
 
-                                                    <td><img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/></td>
+                                                    <td>
+                                                    <div class="wrapImgCard">
+                                                        <img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/>
+                                                    </div>
+                                                    </td>
                                                     <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
                                                     <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
                                                     <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
