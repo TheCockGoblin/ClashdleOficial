@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+
 }
 
 #tudo {
@@ -41,7 +42,7 @@
     text-align: center;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.9s forwards; /* Aplica a animação */
-    font-family: Algerian;
+    font-family: "Poppins", sans-serif;
     font-size: 2rem;
 }
 
@@ -59,7 +60,7 @@
     margin-top: 100px;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.9s forwards; /* Aplica a animação */
-    font-family: Algerian;
+    font-family: "Poppins", sans-serif;
     font-size: 1.4rem;
 }
 
@@ -122,6 +123,7 @@
     align-items: center;
     list-style: none;
     left: 37.4%;
+    height:500px;
 }
 
 .cardImage {

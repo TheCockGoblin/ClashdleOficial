@@ -1214,6 +1214,19 @@ namespace clashclash.Controllers
             return Json(card);
         }
 
+        [HttpGet]
+        public IActionResult GetRandCard()
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(1, 50);
+            var card = _cards[randomNumber];
+            if (card == null)
+            {
+                return NotFound(); // Retorna 404 se o cartão não for encontrado
+            }
+
+            return Json(card);
+        }
 
     }
 }
