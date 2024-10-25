@@ -1,4 +1,6 @@
 html {
+    position: relative;
+    min-height: 100%;
     font-size: 14px;
 }
 
@@ -12,13 +14,13 @@ html {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
+body {
+    background-image: url("../css/m72NFZ7.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
 }
-
-
-
 
 @import url('https://fonts.googleapis.com/css2?Roboto&display=swap');
 
@@ -54,10 +56,6 @@ h1 {
     margin: 100px 0px 100px;
 }
 
-body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-}
 
 .botHome {
     display: flex;
@@ -80,9 +78,9 @@ body {
     color: azure;
 }
 
-    .botAdiv:hover {
-        color: wheat;
-    }
+.botAdiv:hover {
+    color: wheat;
+}
 
 .botP {
     position: relative;
@@ -99,14 +97,10 @@ body {
     border-radius: 20px;
 }
 
-    .bots:hover {
-        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    }
-
-    .bots:active {
-        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-        cursor: pointer;
-    }
+.bots:active {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    cursor: pointer;
+}
 
 .slideshow {
     list-style-type: none;
@@ -114,7 +108,7 @@ body {
 
     .slideshow,
     .slideshow:after {
-        top: -16px; /*Not sure why I needed this fix*/
+        top: -16px; 
         position: fixed;
         width: 100%;
         height: 100%;
@@ -138,7 +132,7 @@ body {
         }
 
 
-
+        /*
         .slideshow li:nth-child(1) span {
             background-image: url("../css/clash-royale-mother-witch-s3kj53vvsvaunvci.jpg");
         }
@@ -162,7 +156,7 @@ body {
             background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg");
             animation-delay: 24s;
         }
-
+        */
 
 
 @keyframes imageAnimation {

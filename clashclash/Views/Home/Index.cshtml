@@ -4,8 +4,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../wwwroot/css/site.css">
 
-<body>
-    <ul class="slideshow">
+<body id="body">
+    <ul class="slideshow" id="slideShow">
         <li><span></span></li>
         <li><span></span></li>
         <li><span></span></li>
@@ -23,3 +23,27 @@
         </div>
     </div>      
 </body>
+<script>
+    var segundosGlob = 0;
+    function atualizarRelogio(){
+        const agora = new Date();
+
+        var horas = agora.getHours();
+        var minutos = agora.getMinutes();
+        var segundos = agora.getSeconds();
+        segundosGlob = segundos;
+        const horaAtual = `${horas}:${minutos}:${segundosGlob}`;
+
+        console.log("A hora atual é:", horaAtual);
+
+        if(segundosGlob == 59)
+        {
+            console.log("MUDo");
+            document.getElementById("body").style.backgroundImage = "url('Untitled-design-92.jpg')";
+        }
+    }
+    const intervalo = 1000;
+    setInterval(atualizarRelogio, intervalo);
+
+    console.log(segundosGlob);
+</script>
