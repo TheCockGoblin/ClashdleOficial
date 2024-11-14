@@ -1,5 +1,7 @@
 ﻿body {
     background-image: url("../css/m72NFZ7.png");
+    background-attachment:fixed;
+    background-size:cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,3 +220,12 @@
         background: #004400;
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     }
+
+.voltaHome {
+    position:absolute;
+    color: white;
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    left: 20px;
+}

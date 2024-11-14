@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2PAoKkaOMHeWDeuuABD9lzvr/YBnzkknriR39pTJ8qo=",
+  "Hash": "Tf28SEgITI7DJXPg1yGUkUVFg8YgqAEtE15MjKUXukw=",
   "Source": "clashclash",
   "BasePath": "_content/clashclash",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\paginas.css"
+    },
+    {
+      "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\seta_volta.png",
+      "SourceId": "clashclash",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\",
+      "BasePath": "_content/clashclash",
+      "RelativePath": "css/seta_volta.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\seta_volta.png"
     },
     {
       "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\site.css",
