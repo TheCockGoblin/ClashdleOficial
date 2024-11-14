@@ -70,11 +70,11 @@
     align-items:center;
     justify-content:center;
     flex-direction:column;
-    gap: 7vh
+    gap: 5vh
 }
 
 .Mae { /*engloba o TH e TD*/
-    gap: 8.5vw;
+    gap: 5vw;
     display: flex;
     flex-direction: row;
     width: 100%;

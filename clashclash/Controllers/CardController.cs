@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using clashclash.Models;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using System.Xml.Linq;
 
 namespace clashclash.Controllers
 {
@@ -156,6 +157,7 @@ namespace clashclash.Controllers
           Name = "Musketeer",
           Id = 26000014,
           maxlevel = 12,
+          maxevolutionlevel = 1,
           elixircost = 4,        
           Medium = "https://api-assets.clashroyale.com/cards/300/Tex1C48UTq9FKtAX-3tzG0FJmc9jzncUZG3bb5Vf-Ds.png",
           Rarity = "rare"
@@ -832,6 +834,7 @@ namespace clashclash.Controllers
           Name = "Cannon",
           Id = 27000000,
           maxlevel = 14,
+          maxevolutionlevel = 1,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/nZK1y-beLxO5vnlyUhK6-2zH2NzXJwqykcosqQ1cmZ8.png",
           Rarity = "common"
@@ -958,8 +961,11 @@ namespace clashclash.Controllers
           maxevolutionlevel = 1,
           elixircost = 4,        
           Medium = "https://api-assets.clashroyale.com/cards/300/eN2TKUYbih-26yBi0xy5LVFOA0zDftgDqxxnVfdIg1o.png",          
-          Rarity = "epic"
-          
+          Rarity = "epic",
+          Type = "building",
+          Gender = "n/a",
+          LaunchDate = 2016
+
         },
         
         new CardModel
@@ -969,7 +975,10 @@ namespace clashclash.Controllers
           maxlevel = 12,
           elixircost = 4,        
           Medium = "https://api-assets.clashroyale.com/cards/300/lZD9MILQv7O-P3XBr_xOLS5idwuz3_7Ws9G60U36yhc.png",
-          Rarity = "rare"
+          Rarity = "rare",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -979,7 +988,10 @@ namespace clashclash.Controllers
           maxlevel = 14,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/Flsoci-Y6y8ZFVi5uRFTmgkPnCmMyMVrU7YmmuPvSBo.png",
-          Rarity = "common"
+          Rarity = "common",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -989,7 +1001,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 2,        
           Medium = "https://api-assets.clashroyale.com/cards/300/bGP21OOmcpHMJ5ZA79bHVV2D-NzPtDkvBskCNJb7pg0.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -999,7 +1014,10 @@ namespace clashclash.Controllers
           maxlevel = 12,
           elixircost = 6,        
           Medium = "https://api-assets.clashroyale.com/cards/300/Ie07nQNK9CjhKOa4-arFAewi4EroqaA-86Xo7r5tx94.png",
-          Rarity = "rare"
+          Rarity = "rare",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1010,7 +1028,10 @@ namespace clashclash.Controllers
           maxevolutionlevel = 1,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/CoZdp5PpsTH858l212lAMeJxVJ0zxv9V-f5xC8Bvj5g.png",          
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1020,7 +1041,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 4,        
           Medium = "https://api-assets.clashroyale.com/cards/300/I1M20_Zs_p_BS1NaNIVQjuMJkYI_1-ePtwYZahn0JXQ.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1029,7 +1053,10 @@ namespace clashclash.Controllers
           Id = 28000006,
           maxlevel = 9,
           Medium = "https://api-assets.clashroyale.com/cards/300/wC6Cm9rKLEOk72zTsukVwxewKIoO4ZcMJun54zCPWvA.png",
-          Rarity = "epic"        
+          Rarity = "epic",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1039,7 +1066,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 6,        
           Medium = "https://api-assets.clashroyale.com/cards/300/fpnESbYqe5GyZmaVVYe-SEu7tE0Kxh_HZyVigzvLjks.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1050,7 +1080,10 @@ namespace clashclash.Controllers
           maxevolutionlevel = 1,
           elixircost = 2,        
           Medium = "https://api-assets.clashroyale.com/cards/300/7dxh2-yCBy1x44GrBaL29vjqnEEeJXHEAlsi5g6D1eY.png",          
-          Rarity = "common"
+          Rarity = "common",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1060,7 +1093,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 4,        
           Medium = "https://api-assets.clashroyale.com/cards/300/98HDkG2189yOULcVG9jz2QbJKtfuhH21DIrIjkOjxI8.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1070,7 +1106,10 @@ namespace clashclash.Controllers
           maxlevel = 6,
           elixircost = 5,        
           Medium = "https://api-assets.clashroyale.com/cards/300/Icp8BIyyfBTj1ncCJS7mb82SY7TPV-MAE-J2L2R48DI.png",
-          Rarity = "legendary"
+          Rarity = "legendary",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1080,7 +1119,10 @@ namespace clashclash.Controllers
           maxlevel = 6,
           elixircost = 2,        
           Medium = "https://api-assets.clashroyale.com/cards/300/_iDwuDLexHPFZ_x4_a0eP-rxCS6vwWgTs6DLauwwoaY.png",
-          Rarity = "legendary"
+          Rarity = "legendary",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate =  2016
         },
         
         new CardModel
@@ -1090,7 +1132,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/QJB-QK1QJHdw4hjpAwVSyZBozc2ZWAR9pQ-SMUyKaT0.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1100,7 +1145,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/mHVCet-1TkwWq-pxVIU2ZWY9_2z7Z7wtP25ArEUsP_g.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2016
         },
         
         new CardModel
@@ -1110,7 +1158,10 @@ namespace clashclash.Controllers
           maxlevel = 12,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/XeQXcrUu59C52DslyZVwCnbi4yamID-WxfVZLShgZmE.png",
-          Rarity = "rare"
+          Rarity = "rare",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2019
         },
         
         new CardModel
@@ -1120,7 +1171,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 2,        
           Medium = "https://api-assets.clashroyale.com/cards/300/Gb0G1yNy0i5cIGUHin8uoFWxqntNtRPhY_jeMXg7HnA.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "Spell",
+          Gender = "male",
+          LaunchDate = 2018
         },
         
         new CardModel
@@ -1130,7 +1184,10 @@ namespace clashclash.Controllers
           maxlevel = 12,
           elixircost = 1,        
           Medium = "https://api-assets.clashroyale.com/cards/300/GITl06sa2nGRLPvboyXbGEv5E3I-wAwn1Eqa5esggbc.png",
-          Rarity = "rare"
+          Rarity = "rare",
+          Type = "ground troop",
+          Gender = "n/a",
+          LaunchDate = 2020
         },
         
         new CardModel
@@ -1140,7 +1197,10 @@ namespace clashclash.Controllers
           maxlevel = 14,
           elixircost = 2,        
           Medium = "https://api-assets.clashroyale.com/cards/300/7MaJLa6hK9WN2_VIshuh5DIDfGwm0wEv98gXtAxLDPs.png",
-          Rarity = "common"
+          Rarity = "common",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2018
         },
         
         new CardModel
@@ -1150,7 +1210,10 @@ namespace clashclash.Controllers
           maxlevel = 14,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/LPg7AGjGI3_xmi7gLLgGC50yKM1jJ2teWkZfoHJcIZo.png",
-          Rarity = "common"
+          Rarity = "common",
+          Type = "Spell",
+          Gender = "male",
+          LaunchDate = 2020
         },
         
         new CardModel
@@ -1160,7 +1223,10 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 3,        
           Medium = "https://api-assets.clashroyale.com/cards/300/BykyeWDqzn4PlHSszu3NbrXT1mHxW2EA8vHbQGR5LDE.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2024
         },
         
         new CardModel
@@ -1170,7 +1236,23 @@ namespace clashclash.Controllers
           maxlevel = 9,
           elixircost = 2,        
           Medium = "https://api-assets.clashroyale.com/cards/300/OQPfGgT5mHEUvPuKKt0plZT0PNtIjCqUgQ3Rm86dQ2k.png",
-          Rarity = "epic"
+          Rarity = "epic",
+          Type = "Spell",
+          Gender = "n/a",
+          LaunchDate = 2024,
+        },
+
+        new CardModel
+        {
+            Name = "Goblinstein",
+            Id = 26000099,
+            maxlevel = 4,
+            elixircost = 5,
+            Medium = "https://api-assets.clashroyale.com/cards/300/mQ20B49dXdk7Nv0lMdLw175M3YvkSpN6KNnho8UKBd8.png",
+            Rarity = "champion",
+            Type = "ground troop",
+            Gender = "male",
+            LaunchDate = 2024
         }
         
 

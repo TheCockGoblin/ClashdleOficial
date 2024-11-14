@@ -11,6 +11,6 @@
         public string Rarity { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
         public string Type { get; set; } = string.Empty;
-        public string LaunchDate { get; set; } = string.Empty;
+        public int LaunchDate { get; set; } = 0;
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Tf28SEgITI7DJXPg1yGUkUVFg8YgqAEtE15MjKUXukw=",
+  "Hash": "FbNUH1/bZVD+1DXjYk3DtkLUMkqYwxdFWdEPKa3frrA=",
   "Source": "clashclash",
   "BasePath": "_content/clashclash",
   "Mode": "Default",
@@ -110,6 +110,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\paginas.css"
+    },
+    {
+      "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\pngtree-gray-and-white-home-button-symbol-in-flat-design-vector-png-image_46312618-removebg-preview.png",
+      "SourceId": "clashclash",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\",
+      "BasePath": "_content/clashclash",
+      "RelativePath": "css/pngtree-gray-and-white-home-button-symbol-in-flat-design-vector-png-image_46312618-removebg-preview.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\pngtree-gray-and-white-home-button-symbol-in-flat-design-vector-png-image_46312618-removebg-preview.png"
     },
     {
       "Identity": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\seta_volta.png",
