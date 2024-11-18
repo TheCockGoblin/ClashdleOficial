@@ -13,10 +13,11 @@
 <body>
     <div class="tudo">
         <div class="voltaHome">
-            <a href ="/Home/Index.cshtml"><img src="/css/seta_volta.png" style="width:30px;"></a>
+            <a href="/Home"><img src="/css/seta_volta.png" style="width:30px;"></a>
         </div>
         <h2>Unlimited Mode</h2>
-        <input type="text" id="searchInput" placeholder="Insert a card" class="barraPesquisa" autocomplete="off">
+
+        <input type="text" id="searchInput" placeholder="Insert a Card" class="barraPesquisa" autocomplete="off">
         <ul class="dropdown" id="dropdown">
         </ul>
 
@@ -26,6 +27,7 @@
         </div>
 
         <table id="cardTable">
+
             <tbody class="BodyCartas">
 
                 @if (Model != null && Model.Any())
@@ -55,14 +57,15 @@
         <div class="ganhou" id="ganhou">
             <p>Congratulations!!!!!</p>
             <div class="opcoes">
-                <a href="" class="btOpcoes"> Try again </a>
+                <a href="../Card/" class="btOpcoes"> Play Again </a>
             </div>
         </div>
+
         <div class="perdeu" id="perdeu">
             <p>GAME OVER</p>
 
             <div class="opcoes">
-                <a href="" class="btOpcoes"> Try again </a>
+                <a href="../Card/" class="btOpcoes"> Play Again </a>
             </div>
         </div>
     </div>
@@ -94,6 +97,25 @@
     tableBody.empty();
 
     $(document).ready(function () {
+        function carregarCardAl() {
+            $.ajax({
+                url: '@Url.Action("GetRandCard", "Card")',
+                type: 'GET',
+                success: function (data) {
+                    correctId = data.id;
+                    correctML = data.maxlevel;
+                    correctMEL = data.maxevolutionlevel;
+                    correctEC = data.elixircost;
+                    correctRar = data.rarity;
+
+                    console.log(data.name);
+                }
+            });
+        }
+        var cardToday = carregarCardAl();
+    })
+
+    $(document).ready(function () {
         function carregarCardPorId(id) {
             $.ajax({
                 url: '@Url.Action("GetCardById", "Card")', // Assumindo que você tem uma ação para buscar o card pelo ID
@@ -110,7 +132,7 @@
                 }
             });
         }
-        var cardToday = carregarCardPorId(26000000);
+
 
         $('#searchInput').on('keyup', function () {
             $('#dropdown').empty();
@@ -133,8 +155,8 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
-                                    `;
+                                                         <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
+                                                `;
 
                                 $('#dropdown').append(row);
                             });
@@ -166,29 +188,30 @@
 
             var temEvo = cardMEL == 0 ? "does not have evolution" : "Does have evolution";
 
-            console.log('vidas: ' + vidas);
+
 
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
-                                        <thead>
-                                            <tr class= "Mae">
-                                                <th class="CartaTH">Name</th>
-                                                <th class="CartaTH">Evolution</th>
-                                                <th class="CartaTH">Elixir Cost</th>
-                                                <th class="CartaTH">Rarity</th>
-                                            </tr>
-                                        </thead>
-                                        <tr class="Mae">
+                                                    <thead>
+                                                        <tr class= "Mae">
 
-                                             <td>
-                                                  <div class="wrapImgCard">
-                                                      <img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/>
-                                                 </div>
-                                            </td>
-                                            <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
-                                            <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
-                                            <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
-                                    </tr>`;
+                                                            <th class="CartaTH">Name</th>
+                                                            <th class="CartaTH">Evolution</th>
+                                                            <th class="CartaTH">Elixir Cost</th>
+                                                            <th class="CartaTH">Rarity</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tr class="Mae">
+
+                                                        <td>
+                                                        <div class="wrapImgCard">
+                                                            <img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/>
+                                                        </div>
+                                                        </td>
+                                                        <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
+                                                        <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
+                                                        <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                                </tr>`;
 
             tableBody.append(codigo);
 
@@ -239,7 +262,8 @@
                 console.log("perdeu");
                 document.getElementById("perdeu").style.display = "flex";
             }
+
         });
     });
-</script>
 
+</script>

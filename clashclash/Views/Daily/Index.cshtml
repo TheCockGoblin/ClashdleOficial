@@ -13,7 +13,7 @@
 <body>
     <div class="tudo">
         <div class="voltaHome">
-            <a href="/Home/Index.cshtml"><img src="/css/seta_volta.png" style="width:30px;"></a>
+            <a href="/Home"><img src="/css/seta_volta.png" style="width:30px;"></a>
         </div>
         <h2>Daily Mode</h2>
 
@@ -96,8 +96,7 @@
     dados.empty();
     tableBody.empty();
 
-    $(document).ready(function () 
-    {
+    $(document).ready(function () {
         function carregarCardAl() {
             $.ajax({
                 url: '@Url.Action("GetRandCard", "Card")',
@@ -114,7 +113,7 @@
             });
         }
         var cardToday = carregarCardAl();
-    }) 
+    })
 
     $(document).ready(function () {
         function carregarCardPorId(id) {
@@ -133,7 +132,7 @@
                 }
             });
         }
-        
+
 
         $('#searchInput').on('keyup', function () {
             $('#dropdown').empty();
@@ -156,8 +155,8 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                                     <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
-                                            `;
+                                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
+                                                    `;
 
                                 $('#dropdown').append(row);
                             });
@@ -193,26 +192,26 @@
 
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
-                                                <thead>
-                                                    <tr class= "Mae">
+                                                        <thead>
+                                                            <tr class= "Mae">
 
-                                                        <th class="CartaTH">Name</th>
-                                                        <th class="CartaTH">Evolution</th>
-                                                        <th class="CartaTH">Elixir Cost</th>
-                                                        <th class="CartaTH">Rarity</th>
-                                                    </tr>
-                                                </thead>
-                                                <tr class="Mae">
+                                                                <th class="CartaTH">Name</th>
+                                                                <th class="CartaTH">Evolution</th>
+                                                                <th class="CartaTH">Elixir Cost</th>
+                                                                <th class="CartaTH">Rarity</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tr class="Mae">
 
-                                                    <td>
-                                                    <div class="wrapImgCard">
-                                                        <img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/>
-                                                    </div>
-                                                    </td>
-                                                    <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
-                                                    <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
-                                                    <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
-                                            </tr>`;
+                                                            <td>
+                                                            <div class="wrapImgCard">
+                                                                <img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/>
+                                                            </div>
+                                                            </td>
+                                                            <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
+                                                            <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
+                                                            <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                                    </tr>`;
 
             tableBody.append(codigo);
 
