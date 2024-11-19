@@ -85,6 +85,8 @@
     var round = 0;
     var vidas = 5;
 
+    var cardToday;
+
     var imagemVidas = document.getElementById("vidasImgId");
     const vidasDiv = document.getElementById("vidasDiv");
     vidasDiv.innerHTML = '';
@@ -96,24 +98,45 @@
     dados.empty();
     tableBody.empty();
 
-    $(document).ready(function () {
-        function carregarCardAl() {
-            $.ajax({
-                url: '@Url.Action("GetRandCard", "Card")',
-                type: 'GET',
-                success: function (data) {
-                    correctId = data.id;
-                    correctML = data.maxlevel;
-                    correctMEL = data.maxevolutionlevel;
-                    correctEC = data.elixircost;
-                    correctRar = data.rarity;
+   
+    function carregarCardAl() 
+    {
+        $.ajax({
+            url: '@Url.Action("GetRandCard", "Card")',
+            type: 'GET',
+            success: function (data) {
+                correctId = data.id;
+                correctML = data.maxlevel;
+                correctMEL = data.maxevolutionlevel;
+                correctEC = data.elixircost;
+                correctRar = data.rarity;
 
-                    console.log(data.name);
-                }
-            });
+                console.log(data.name);
+            }
+        });
+    }
+
+    var cardToday = carregarCardAl();
+    
+
+    function verificarMeiaNoite() {
+        var agora = new Date();
+        var hora = agora.getHours();
+        var minuto = agora.getMinutes();
+
+        // Verifica se é 00:00 (meia-noite)
+        if (hora === 12 && minuto === 13) {
+            cardToday = carregarCardAl();
         }
-        var cardToday = carregarCardAl();
-    })
+    }
+
+    // Configura o setInterval para verificar a hora a cada minuto (60.000 ms)
+    setInterval(function () {
+        verificarMeiaNoite();
+    }, 60000); // 60000 ms = 1 minuto
+
+    // Você também pode chamar carregarCardAl imediatamente, caso já tenha passado meia-noite
+    verificarMeiaNoite();
 
     $(document).ready(function () {
         function carregarCardPorId(id) {

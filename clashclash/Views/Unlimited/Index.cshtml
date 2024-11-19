@@ -42,6 +42,9 @@
                             <td><p id="stats">@item.elixircost</p></td>
                             <td><p id="stats">@item.Rarity</p></td>
                             <td><p id="stats">@item.Medium</p></td>
+                            <td><p id="stats">@item.Gender</p></td>
+                            <td><p id="stats">@item.Type</p></td>
+                            <td><p id="stats">@item.launchdate</p></td>
                         </tr>
                     }
                 }
@@ -81,6 +84,9 @@
     var correctMEL;
     var correctEC;
     var correctRar;
+    var correctGen;
+    var correctTyp;
+    var correctLD;
 
     var round = 0;
     var vidas = 5;
@@ -107,6 +113,9 @@
                     correctMEL = data.maxevolutionlevel;
                     correctEC = data.elixircost;
                     correctRar = data.rarity;
+                    correctGen = data.gender;
+                    correctTyp = data.type;
+                    correctLD = data.launchdate;
 
                     console.log(data.name);
                 }
@@ -127,6 +136,9 @@
                     correctMEL = data.maxevolutionlevel;
                     correctEC = data.elixircost;
                     correctRar = data.rarity;
+                    correctGen = data.gender;
+                    correctTyp = data.type;
+                    correctLD = data.launchdate;
 
                     console.log(data.name);
                 }
@@ -155,7 +167,7 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                                         <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
+                                                                 <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" data-gender="${item.gender}" data-gender="${item.type}" data-gender="${item.launchdate}" >${item.name}</button></li>
                                                 `;
 
                                 $('#dropdown').append(row);
@@ -182,6 +194,9 @@
             var cardMEL = card.data('maxevolutionlevel');
             var cardElixirCost = card.data('elixircost');
             var cardRarity = card.data('rarity');
+            var cardGender = card.data('gender');
+            var cardType = card.data('type');
+            var cardLD = card.data('launchdate');
             var image = card.data('medium');
 
             console.log(image);
@@ -199,6 +214,9 @@
                                                             <th class="CartaTH">Evolution</th>
                                                             <th class="CartaTH">Elixir Cost</th>
                                                             <th class="CartaTH">Rarity</th>
+                                                            <th class="CartaTH">Gender</th>
+                                                            <th class="CartaTH">Type</th>
+                                                            <th class="CartaTH">Launch Date</th>
                                                         </tr>
                                                     </thead>
                                                     <tr class="Mae">
@@ -211,6 +229,9 @@
                                                         <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
                                                         <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
                                                         <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                                        <td class="CartaTD" id="gender${round}" ><p>${cardGender}</p></td>
+                                                        <td class="CartaTD" id="type${round}" ><p>${cardType}</p></td>
+                                                        <td class="CartaTD" id="launchDate${round}" ><p>${cardLD}</p></td>
                                                 </tr>`;
 
             tableBody.append(codigo);
@@ -257,7 +278,20 @@
                 else {
                     document.getElementById(`raridade${round}`).style.backgroundColor = "red";
                 }
+                if (cardGender == correctGen) {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`gender{round}`).style.backgroundColor = "red";
+                }
+                if (cardRarity == correctRar) {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "red";
+                }
             }
+
             else {
                 console.log("perdeu");
                 document.getElementById("perdeu").style.display = "flex";
