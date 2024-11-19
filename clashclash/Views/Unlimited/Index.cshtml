@@ -167,7 +167,7 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                                                 <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" data-gender="${item.gender}" data-gender="${item.type}" data-gender="${item.launchdate}" >${item.name}</button></li>
+                                                                 <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" data-gender="${item.gender}" data-type="${item.type}" data-launchdate="${item.launchdate}" >${item.name}</button></li>
                                                 `;
 
                                 $('#dropdown').append(row);
@@ -282,13 +282,19 @@
                     document.getElementById(`gender${round}`).style.backgroundColor = "green";
                 }
                 else {
-                    document.getElementById(`gender{round}`).style.backgroundColor = "red";
+                    document.getElementById(`gender${round}`).style.backgroundColor = "red";
                 }
-                if (cardRarity == correctRar) {
-                    document.getElementById(`raridade${round}`).style.backgroundColor = "green";
+                if (cardType == correctTyp) {
+                    document.getElementById(`type${round}`).style.backgroundColor = "green";
                 }
                 else {
-                    document.getElementById(`raridade${round}`).style.backgroundColor = "red";
+                    document.getElementById(`type${round}`).style.backgroundColor = "red";
+                }
+                if (cardLD == correctLD) {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "red";
                 }
             }
 
