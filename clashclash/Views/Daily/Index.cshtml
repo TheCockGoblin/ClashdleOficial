@@ -42,6 +42,9 @@
                             <td><p id="stats">@item.elixircost</p></td>
                             <td><p id="stats">@item.Rarity</p></td>
                             <td><p id="stats">@item.Medium</p></td>
+                            <td><p id="stats">@item.Gender</p></td>
+                            <td><p id="stats">@item.Type</p></td>
+                            <td><p id="stats">@item.launchdate</p></td>
                         </tr>
                     }
                 }
@@ -57,7 +60,7 @@
         <div class="ganhou" id="ganhou">
             <p>Congratulations!!!!!</p>
             <div class="opcoes">
-                <a href="../Unlimited/" class="btOpcoes"> Unlimited mode </a>
+                <a href="../Unlimited/" class="btOpcoes"> Unlimited Mode </a>
             </div>
         </div>
 
@@ -65,7 +68,7 @@
             <p>GAME OVER</p>
 
             <div class="opcoes">
-                <a href="../Unlimited/" class="btOpcoes"> Unlimited mode </a>
+                <a href="../Unlimited/" class="btOpcoes"> Unlimited Mode </a>
             </div>
         </div>
     </div>
@@ -76,16 +79,19 @@
     var tableBody = $('#cardTable tbody');
     var dados = $('#stats');
 
+    var correctName;
     var correctId;
     var correctML;
     var correctMEL;
     var correctEC;
     var correctRar;
+    var correctGen;
+    var correctTyp;
+    var correctLD;
+    var correctImg;
 
     var round = 0;
     var vidas = 5;
-
-    var cardToday;
 
     var imagemVidas = document.getElementById("vidasImgId");
     const vidasDiv = document.getElementById("vidasDiv");
@@ -98,65 +104,68 @@
     dados.empty();
     tableBody.empty();
 
-   
-    function carregarCardAl() 
-    {
-        $.ajax({
+    async function carregarCardPorId(id) {
+        const response = await $.ajax({
+            url: '@Url.Action("GetCardById", "Card")',
+            type: 'GET',
+            data: { id: id },
+        });
+
+        correctName = response.name;
+        correctId = response.id;
+        correctML = response.maxlevel;
+        correctMEL = response.maxevolutionlevel;
+        correctEC = response.elixircost;
+        correctRar = response.rarity;
+        correctGen = response.gender;
+        correctTyp = response.type;
+        correctLD = response.launchdate;
+        correctImg = response.medium;
+
+        console.log(response.name);
+    }
+
+    async function carregarCardAl() {
+        const response = await $.ajax({
             url: '@Url.Action("GetRandCard", "Card")',
             type: 'GET',
-            success: function (data) {
-                correctId = data.id;
-                correctML = data.maxlevel;
-                correctMEL = data.maxevolutionlevel;
-                correctEC = data.elixircost;
-                correctRar = data.rarity;
-
-                console.log(data.name);
-            }
         });
+
+        correctId = response.id;
+        correctML = response.maxlevel;
+        correctMEL = response.maxevolutionlevel;
+        correctEC = response.elixircost;
+        correctRar = response.rarity;
+        correctGen = response.gender;
+        correctTyp = response.type;
+        correctLD = response.launchdate;
+        correctImg = response.medium;
+
+        console.log(response.name);
     }
 
-    var cardToday = carregarCardAl();
-    
+    async function verificarDia() {
+        const hoje = new Date().toISOString().split('T')[0];
+        const ultimaData = localStorage.getItem('ultimaData');
+        const ultId = localStorage.getItem('idcarta');
 
-    function verificarMeiaNoite() {
-        var agora = new Date();
-        var hora = agora.getHours();
-        var minuto = agora.getMinutes();
-
-        // Verifica se é 00:00 (meia-noite)
-        if (hora === 12 && minuto === 13) {
-            cardToday = carregarCardAl();
+        if (hoje !== ultimaData) {
+            await carregarCardAl(); // Aguarda o carregamento do novo card
+            localStorage.setItem('ultimaData', hoje);
+            localStorage.setItem('idcarta', correctId);
+            console.log(correctId);
+        } else {
+            await carregarCardPorId(ultId); // Aguarda o carregamento do card salvo
         }
     }
 
-    // Configura o setInterval para verificar a hora a cada minuto (60.000 ms)
-    setInterval(function () {
-        verificarMeiaNoite();
-    }, 60000); // 60000 ms = 1 minuto
-
-    // Você também pode chamar carregarCardAl imediatamente, caso já tenha passado meia-noite
-    verificarMeiaNoite();
+    // Chamada inicial
+    (async () => {
+        await verificarDia();
+        console.log(correctId); // Agora deve ter o valor correto
+    })();
 
     $(document).ready(function () {
-        function carregarCardPorId(id) {
-            $.ajax({
-                url: '@Url.Action("GetCardById", "Card")', // Assumindo que você tem uma ação para buscar o card pelo ID
-                type: 'GET',
-                data: { id: id },
-                success: function (data) {
-                    correctId = data.id;
-                    correctML = data.maxlevel;
-                    correctMEL = data.maxevolutionlevel;
-                    correctEC = data.elixircost;
-                    correctRar = data.rarity;
-
-                    console.log(data.name);
-                }
-            });
-        }
-
-
         $('#searchInput').on('keyup', function () {
             $('#dropdown').empty();
             var query = $(this).val();
@@ -178,7 +187,7 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                                             <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" >${item.name}</button></li>
+                                                                     <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" data-gender="${item.gender}" data-type="${item.type}" data-launchdate="${item.launchdate}" >${item.name}</button></li>
                                                     `;
 
                                 $('#dropdown').append(row);
@@ -205,6 +214,9 @@
             var cardMEL = card.data('maxevolutionlevel');
             var cardElixirCost = card.data('elixircost');
             var cardRarity = card.data('rarity');
+            var cardGender = card.data('gender');
+            var cardType = card.data('type');
+            var cardLD = card.data('launchdate');
             var image = card.data('medium');
 
             console.log(image);
@@ -222,6 +234,9 @@
                                                                 <th class="CartaTH">Evolution</th>
                                                                 <th class="CartaTH">Elixir Cost</th>
                                                                 <th class="CartaTH">Rarity</th>
+                                                                <th class="CartaTH">Gender</th>
+                                                                <th class="CartaTH">Type</th>
+                                                                <th class="CartaTH">Launch Date</th>
                                                             </tr>
                                                         </thead>
                                                         <tr class="Mae">
@@ -234,6 +249,9 @@
                                                             <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
                                                             <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
                                                             <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                                            <td class="CartaTD" id="gender${round}" ><p>${cardGender}</p></td>
+                                                            <td class="CartaTD" id="type${round}" ><p>${cardType}</p></td>
+                                                            <td class="CartaTD" id="launchDate${round}" ><p>${cardLD}</p></td>
                                                     </tr>`;
 
             tableBody.append(codigo);
@@ -280,10 +298,114 @@
                 else {
                     document.getElementById(`raridade${round}`).style.backgroundColor = "red";
                 }
+                if (cardGender == correctGen) {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "red";
+                }
+                if (cardType == correctTyp) {
+                    document.getElementById(`type${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`type${round}`).style.backgroundColor = "red";
+                }
+                if (cardLD == correctLD) {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "red";
+                }
             }
+
             else {
                 console.log("perdeu");
                 document.getElementById("perdeu").style.display = "flex";
+
+                if (cardElixirCost == correctEC) {
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "green";
+                    console.log("ec correto");
+
+                }
+                else {
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "red";
+                }
+
+                if (cardMEL == correctMEL) {
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "green";
+                    console.log("mel correto");
+
+                }
+
+                else {
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "red";
+                }
+
+                if (cardRarity == correctRar) {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "red";
+                }
+                if (cardGender == correctGen) {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "red";
+                }
+                if (cardType == correctTyp) {
+                    document.getElementById(`type${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`type${round}`).style.backgroundColor = "red";
+                }
+                if (cardLD == correctLD) {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "red";
+                }
+
+                round++;
+
+                var corrTemEvo = correctMEL == 0 ? "Does not have evolution" : "Does have evolution";
+
+                var codigoFim = `
+                                                        <thead>
+                                                            <tr class= "Mae">
+
+                                                                <th class="CartaTH">Name</th>
+                                                                <th class="CartaTH">Evolution</th>
+                                                                <th class="CartaTH">Elixir Cost</th>
+                                                                <th class="CartaTH">Rarity</th>
+                                                                <th class="CartaTH">Gender</th>
+                                                                <th class="CartaTH">Type</th>
+                                                                <th class="CartaTH">Launch Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tr class="Mae">
+
+                                                            <td>
+                                                            <div class="wrapImgCard">
+                                                                <img src="${correctImg}" alt="carta" id="cardImage" class="cardImage"/>
+                                                            </div>
+                                                            </td>
+                                                            <td class="CartaTD" id="maxEL${round}" ><p>${corrTemEvo}</p></td>
+                                                            <td class="CartaTD" id="custoEl${round}" ><p>${correctEC}</p></td>
+                                                            <td class="CartaTD" id="raridade${round}" ><p>${correctRar}</p></td>
+                                                            <td class="CartaTD" id="gender${round}" ><p>${correctGen}</p></td>
+                                                            <td class="CartaTD" id="type${round}" ><p>${correctTyp}</p></td>
+                                                            <td class="CartaTD" id="launchDate${round}" ><p>${correctLD}</p></td>
+                                                    </tr>`;
+                tableBody.append(codigoFim);
+
+                document.getElementById(`maxEL${round}`).style.backgroundColor = "blue";
+                document.getElementById(`custoEl${round}`).style.backgroundColor = "blue";
+                document.getElementById(`raridade${round}`).style.backgroundColor = "blue";
+                document.getElementById(`gender${round}`).style.backgroundColor = "blue";
+                document.getElementById(`type${round}`).style.backgroundColor = "blue";
+                document.getElementById(`launchDate${round}`).style.backgroundColor = "blue";
+
             }
 
         });

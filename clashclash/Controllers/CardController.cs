@@ -1569,7 +1569,7 @@ namespace clashclash.Controllers
             var card = _cards.FirstOrDefault(c => c.Id == id);
             if (card == null)
             {
-                return NotFound(); // Retorna 404 se o cartão não for encontrado
+                return NotFound(); 
             }
 
             return Json(card);
@@ -1583,7 +1583,7 @@ namespace clashclash.Controllers
             var card = _cards[randomNumber];
             if (card == null)
             {
-                return NotFound(); // Retorna 404 se o cartão não for encontrado
+                return NotFound(); 
             }
 
             return Json(card);

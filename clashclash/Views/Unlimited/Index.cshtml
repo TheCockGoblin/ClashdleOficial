@@ -79,6 +79,7 @@
     var tableBody = $('#cardTable tbody');
     var dados = $('#stats');
 
+    var correctName;
     var correctId;
     var correctML;
     var correctMEL;
@@ -87,6 +88,7 @@
     var correctGen;
     var correctTyp;
     var correctLD;
+    var correctImg;
 
     var round = 0;
     var vidas = 5;
@@ -116,6 +118,7 @@
                     correctGen = data.gender;
                     correctTyp = data.type;
                     correctLD = data.launchdate;
+                    correctImg = data.medium;
 
                     console.log(data.name);
                 }
@@ -131,6 +134,7 @@
                 type: 'GET',
                 data: { id: id },
                 success: function (data) {
+                    correctName = data.name;
                     correctId = data.id;
                     correctML = data.maxlevel;
                     correctMEL = data.maxevolutionlevel;
@@ -139,12 +143,12 @@
                     correctGen = data.gender;
                     correctTyp = data.type;
                     correctLD = data.launchdate;
+                    correctImg = data.medium;
 
                     console.log(data.name);
                 }
             });
         }
-
 
         $('#searchInput').on('keyup', function () {
             $('#dropdown').empty();
@@ -298,9 +302,95 @@
                 }
             }
 
-            else {
+            else 
+            {
                 console.log("perdeu");
                 document.getElementById("perdeu").style.display = "flex";
+
+                if (cardElixirCost == correctEC) {
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "green";
+                    console.log("ec correto");
+
+                }
+                else {
+                    document.getElementById(`custoEl${round}`).style.backgroundColor = "red";
+                }
+
+                if (cardMEL == correctMEL) {
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "green";
+                    console.log("mel correto");
+
+                }
+
+                else {
+                    document.getElementById(`maxEL${round}`).style.backgroundColor = "red";
+                }
+
+                if (cardRarity == correctRar) {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`raridade${round}`).style.backgroundColor = "red";
+                }
+                if (cardGender == correctGen) {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`gender${round}`).style.backgroundColor = "red";
+                }
+                if (cardType == correctTyp) {
+                    document.getElementById(`type${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`type${round}`).style.backgroundColor = "red";
+                }
+                if (cardLD == correctLD) {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "green";
+                }
+                else {
+                    document.getElementById(`launchDate${round}`).style.backgroundColor = "red";
+                }
+
+                round++;
+
+                var corrTemEvo = correctMEL == 0 ? "Does not have evolution" : "Does have evolution";
+
+                var codigoFim = `
+                                                    <thead>
+                                                        <tr class= "Mae">
+
+                                                            <th class="CartaTH">Name</th>
+                                                            <th class="CartaTH">Evolution</th>
+                                                            <th class="CartaTH">Elixir Cost</th>
+                                                            <th class="CartaTH">Rarity</th>
+                                                            <th class="CartaTH">Gender</th>
+                                                            <th class="CartaTH">Type</th>
+                                                            <th class="CartaTH">Launch Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tr class="Mae">
+
+                                                        <td>
+                                                        <div class="wrapImgCard">
+                                                            <img src="${correctImg}" alt="carta" id="cardImage" class="cardImage"/>
+                                                        </div>
+                                                        </td>
+                                                        <td class="CartaTD" id="maxEL${round}" ><p>${corrTemEvo}</p></td>
+                                                        <td class="CartaTD" id="custoEl${round}" ><p>${correctEC}</p></td>
+                                                        <td class="CartaTD" id="raridade${round}" ><p>${correctRar}</p></td>
+                                                        <td class="CartaTD" id="gender${round}" ><p>${correctGen}</p></td>
+                                                        <td class="CartaTD" id="type${round}" ><p>${correctTyp}</p></td>
+                                                        <td class="CartaTD" id="launchDate${round}" ><p>${correctLD}</p></td>
+                                                </tr>`;
+                tableBody.append(codigoFim);
+
+                document.getElementById(`maxEL${round}`).style.backgroundColor = "blue";
+                document.getElementById(`custoEl${round}`).style.backgroundColor = "blue";
+                document.getElementById(`raridade${round}`).style.backgroundColor = "blue";
+                document.getElementById(`gender${round}`).style.backgroundColor = "blue";
+                document.getElementById(`type${round}`).style.backgroundColor = "blue";
+                document.getElementById(`launchDate${round}`).style.backgroundColor = "blue";
+
             }
 
         });
