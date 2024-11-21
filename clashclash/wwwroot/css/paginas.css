@@ -1,7 +1,7 @@
 ﻿body {
     background-image: url("../css/m72NFZ7.png");
-    background-attachment:fixed;
-    background-size:cover;
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
 }
 
 #ganhou {
@@ -36,48 +35,53 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 200px; /* Altura da CartaTD */
-    width: 200px; /* Largura da CartaTD */
+    height: 23vh; /* Altura da CartaTD */
+    min-height: 180px;
+    width: 10vw; /* Largura da CartaTD */
+    min-width: 150px;
     background-color: lightyellow;
     border-radius: 10px;
     text-align: center;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.9s forwards; /* Aplica a animação */
     font-family: "Poppins", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .CartaTH { /*Parte de cima*/
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    color: darkblue;
+    color: rgb(253, 253, 253);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px; /* Altura da CartaTD */
-    width: 200px; /* Largura da CartaTD */
-    background-color: lightyellow;
+    height: 7.5vh;
+    min-height: 40px;
+    width: 10vw;
+    min-width: 150px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 70px;
     opacity: 0; /* Inicialmente invisível */
     animation: fadeIn 0.9s forwards; /* Aplica a animação */
     font-family: "Poppins", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
-.BodyCartas{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    gap: 5vh
+.BodyCartas { /*engloba os conjuntos TH e TD*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px; /*entre conjuntos*/
+    margin-top: 100px;
 }
 
-.Mae { /*engloba o TH e TD*/
-    gap: 5vw;
+.Mae { /*engloba as cartas de cada conjunto*/
+    gap: 2%; /*entre cartas*/
     display: flex;
     flex-direction: row;
-    width: 100%;
+    max-width: 100vw;
     min-height: 150px; /* Altura mínima */
 }
 
@@ -91,12 +95,22 @@
     animation-delay: 0.5s; /* Atraso para a CartaTD */
 }
 
+.barFixed {
+    position: fixed;
+    z-index: 999;
+    top: 13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    background-color: #00000070;
+}
+
 .barraPesquisa {
-    margin-top: 30px;
     padding: 8px;
     border: none;
     outline: none;
     width: 25vw;
+    min-width: 200px;
     height: 40px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
@@ -111,35 +125,113 @@
     width: 25vw;
 }
 
-.selectCard:hover {
-    background-color: #808080;
-}
+    .selectCard:hover {
+        background-color: #808080;
+    }
 
 .dropdown {
-    position: absolute;
+    position: fixed;
     max-height: 40vh;
     z-index: 9999;
     padding: 0;
     margin: 0;
     align-items: center;
     list-style: none;
-    left: 37.5%;
-    width:25vw;
+    width: 25vw;
+    min-width: 200px;
     overflow-y: auto;
-    overflow-x:hidden;
+    overflow-x: hidden;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
+
+/* Popup container */
+.tutorial-popup {
+    display: none; /* Inicialmente escondido */
+    border-radius: 10px;
+    background-color: #00000042;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    width: 30%;
+    max-width: 400px;
+    padding: 10px;
+    margin-top: 8%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Tutorial content */
+.tutorial-content {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Close button */
+.close-popup {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: none;
+    background: none;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Color indicators */
+.color-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+    .color-indicator.green {
+        background-color: green;
+        list-style-type: none;
+    }
+
+    .color-indicator.red {
+        background-color: red;
+        list-style-type: none;
+    }
 
 .wrapImgCard {
     position: relative;
-    width: 200px;
-    height: auto;
+    display: flex;
+    align-items: center;
+    width: 10vw;
+    min-width: 150px;
+    height: 25vh;
+    min-height: 180px;
 }
 
 .cardImage {
     position: absolute;
-    top: -48px; 
+    top: -38px;
     right: 1px;
-    width: 200px;
+    width: 10vw;
+    min-width: 150px;
+    z-index: 1;
+    height: auto;
+}
+
+.cardName {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o texto */
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    background-color: #00000069;
+    width: 88%;
+    z-index: 2; /* Fica na frente da imagem */
+    text-align: center;
 }
 
 .vidasImg {
@@ -222,10 +314,17 @@
     }
 
 .voltaHome {
-    position:absolute;
+    position: absolute;
+    z-index:9999;
     color: white;
     height: 30px;
     width: 30px;
     margin-top: 20px;
     left: 20px;
+}
+
+.highlighted {
+    background-color: #808080;
+    color: #000;
+    font-weight: bold;
 }

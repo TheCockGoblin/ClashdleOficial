@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("clashclash")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9c760c0074745349b95c2c983f7f687eace2806")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75320ff6e1a5513c402b64658f1e04a6a5485206")]
 [assembly: System.Reflection.AssemblyProductAttribute("clashclash")]
 [assembly: System.Reflection.AssemblyTitleAttribute("clashclash")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

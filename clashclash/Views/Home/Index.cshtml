@@ -5,13 +5,6 @@
 <link rel="stylesheet" href="../wwwroot/css/site.css">
 
 <body id="body">
-    <ul class="slideshow" id="slideShow">
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-    </ul>
     <div class="tudo">	    
         <div class="Title">
             <h1>CLASHDLE</h1>
@@ -23,27 +16,3 @@
         </div>
     </div>      
 </body>
-<script>
-    var segundosGlob = 0;
-    function atualizarRelogio(){
-        const agora = new Date();
-
-        var horas = agora.getHours();
-        var minutos = agora.getMinutes();
-        var segundos = agora.getSeconds();
-        segundosGlob = segundos;
-        const horaAtual = `${horas}:${minutos}:${segundosGlob}`;
-
-        console.log("A hora atual é:", horaAtual);
-
-        if(segundosGlob == 59)
-        {
-            console.log("MUDo");
-            document.getElementById("body").style.backgroundImage = "url('https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5bfa14d04ae3429879830ee4_home-hero.jpg')";
-        }
-    }
-    const intervalo = 1000;
-    setInterval(atualizarRelogio, intervalo);
-
-    console.log(segundosGlob);
-</script>
