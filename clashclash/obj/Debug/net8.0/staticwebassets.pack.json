@@ -13,12 +13,16 @@
       "PackagePath": "staticwebassets\\css\\crownClash.png"
     },
     {
-      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
-      "PackagePath": "staticwebassets\\css\\paginas.css"
+      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\evolutionShard.png",
+      "PackagePath": "staticwebassets\\css\\evolutionShard.png"
     },
     {
-      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\pngtree-gray-and-white-home-button-symbol-in-flat-design-vector-png-image_46312618-removebg-preview.png",
-      "PackagePath": "staticwebassets\\css\\pngtree-gray-and-white-home-button-symbol-in-flat-design-vector-png-image_46312618-removebg-preview.png"
+      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\notEvolutionShard.png",
+      "PackagePath": "staticwebassets\\css\\notEvolutionShard.png"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\paginas.css",
+      "PackagePath": "staticwebassets\\css\\paginas.css"
     },
     {
       "Id": "C:\\Users\\Aluno\\Source\\Repos\\ClashdleOficial\\clashclash\\wwwroot\\css\\seta_volta.png",

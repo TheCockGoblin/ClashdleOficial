@@ -126,45 +126,6 @@
         $('#tutorialPopup').fadeOut();
     });
 
-    let currentFocus = -1;
-
-    $('#searchInput').on('keydown', function (e) {
-        const dropdown = $('#dropdown');
-        const dropdownItems = $('#dropdown li button');
-
-        // Abrir dropdown, se necessário
-        if (!dropdown.is(':visible')) dropdown.show();
-
-        if (e.key === 'ArrowDown') {
-            currentFocus = (currentFocus + 1) % dropdownItems.length;
-            highlightItem(dropdownItems);
-            e.preventDefault();
-        } else if (e.key === 'ArrowUp') {
-            currentFocus = (currentFocus - 1 + dropdownItems.length) % dropdownItems.length;
-            highlightItem(dropdownItems);
-            e.preventDefault();
-        } else if (e.key === 'Enter') {
-            if (currentFocus >= 0) {
-                dropdownItems[currentFocus].click();
-            }
-        }
-    });
-
-    function highlightItem(items) {
-        items.removeClass('highlighted');
-        if (currentFocus >= 0) {
-            $(items[currentFocus]).addClass('highlighted');
-            items[currentFocus].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    }
-
-    // Impedir o fechamento do dropdown durante navegação ou clique
-    $('#dropdown').on('mousedown', function (e) {
-        e.preventDefault();
-    });
-
-
-
     dados.empty();
     tableBody.empty();
 
@@ -251,8 +212,8 @@
                             $.each(data, function (index, item) {
 
                                 var row = `
-                                                                     <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" data-gender="${item.gender}" data-type="${item.type}" data-launchdate="${item.launchdate}" >${item.name}</button></li>
-                                                    `;
+                                        <li><button class="selectCard" data-name="${item.name}" data-id="${item.id}" data-maxlevel="${item.maxlevel}" data-maxevolutionlevel="${item.maxevolutionlevel}" data-elixircost="${item.elixircost}" data-rarity="${item.rarity}" data-medium="${item.medium}" data-gender="${item.gender}" data-type="${item.type}" data-launchdate="${item.launchdate}" >${item.name}</button></li>
+                                                        `;
 
                                 $('#dropdown').append(row);
                             });
@@ -266,6 +227,7 @@
                 $('#dropdown').hide(); // Esconde se o campo de pesquisa estiver vazio
             }
         });
+
         $(document).on('click', '.selectCard', function () {
             round++;
             vidas--;
@@ -285,40 +247,46 @@
 
             console.log(image);
 
-            var temEvo = cardMEL == 0 ? "does not have evolution" : "Does have evolution";
-
-
+            var temEvo = cardMEL == 0 ? "<img src='/css/notEvolutionShard.png' class='evolutionClass'/> <span class='tipEvo'>Does not have evo</span>"
+                : "<img src='/css/evolutionShard.png' class='evolutionClass'/> <span class='tipEvo'>Does have evo</span>";
 
             console.log('Nome da carta selecionada: ' + cardName);
             var codigo = `
-                                                        <thead>
-                                                            <tr class= "Mae">
+                                                            <thead>
+                                                                <tr class= "Mae">
 
-                                                                <th class="CartaTH">Name</th>
-                                                                <th class="CartaTH">Evolution</th>
-                                                                <th class="CartaTH">Elixir Cost</th>
-                                                                <th class="CartaTH">Rarity</th>
-                                                                <th class="CartaTH">Gender</th>
-                                                                <th class="CartaTH">Type</th>
-                                                                <th class="CartaTH">Launch Date</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tr class="Mae">
+                                                                    <th class="CartaTH">Name</th>
+                                                                    <th class="CartaTH">Evolution</th>
+                                                                    <th class="CartaTH">Elixir Cost</th>
+                                                                    <th class="CartaTH">Rarity</th>
+                                                                    <th class="CartaTH">Gender</th>
+                                                                    <th class="CartaTH">Type</th>
+                                                                    <th class="CartaTH">Launch Date</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr class="Mae">
 
-                                                            <td>
-                                                            <div class="wrapImgCard">
-                                                                <img src="${image}" alt="${cardName}" id="cardImage" class="cardImage"/>
-                                                            </div>
-                                                            </td>
-                                                            <td class="CartaTD" id="maxEL${round}" ><p>${temEvo}</p></td>
-                                                            <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
-                                                            <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
-                                                            <td class="CartaTD" id="gender${round}" ><p>${cardGender}</p></td>
-                                                            <td class="CartaTD" id="type${round}" ><p>${cardType}</p></td>
-                                                            <td class="CartaTD" id="launchDate${round}" ><p>${cardLD}</p></td>
-                                                    </tr>`;
+                                                                <td>
+                                                                <div class="wrapImgCard">
+                                                                    <img src="${image}" alt="card" id="cardImage" class="cardImage"/>
+                                                                    <span class="cardName">${cardName}</span>
+                                                                </div>
+                                                                </td>
+                                                                <td class="CartaTD" id="maxEL${round}">${temEvo}</td>
+                                                                <td class="CartaTD" id="custoEl${round}" ><p>${cardElixirCost}</p></td>
+                                                                <td class="CartaTD" id="raridade${round}" ><p>${cardRarity}</p></td>
+                                                                <td class="CartaTD" id="gender${round}" ><p>${cardGender}</p></td>
+                                                                <td class="CartaTD" id="type${round}" ><p>${cardType}</p></td>
+                                                                <td class="CartaTD" id="launchDate${round}" ><p>${cardLD}</p></td>
+                                                        </tr>`;
 
             tableBody.append(codigo);
+
+            // Faz a página rolar para baixo
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
 
             vidasDiv.innerHTML = '';
             for (let i = 0; i < vidas; i++) {
@@ -432,35 +400,37 @@
 
                 round++;
 
-                var corrTemEvo = correctMEL == 0 ? "Does not have evolution" : "Does have evolution";
+                var corrTemEvo = correctMEL == 0 ? "<img src='/css/notEvolutionShard.png' class='evolutionClass'/> <span class='tipEvo'>Does not have evo</span>"
+                    : "<img src='/css/evolutionShard.png' class='evolutionClass'/> <span class='tipEvo'>Does have evo</span>";
 
                 var codigoFim = `
-                                                        <thead>
-                                                            <tr class= "Mae">
+                                                            <thead>
+                                                                <tr class= "Mae">
 
-                                                                <th class="CartaTH">Name</th>
-                                                                <th class="CartaTH">Evolution</th>
-                                                                <th class="CartaTH">Elixir Cost</th>
-                                                                <th class="CartaTH">Rarity</th>
-                                                                <th class="CartaTH">Gender</th>
-                                                                <th class="CartaTH">Type</th>
-                                                                <th class="CartaTH">Launch Date</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tr class="Mae">
+                                                                    <th class="CartaTH">Name</th>
+                                                                    <th class="CartaTH">Evolution</th>
+                                                                    <th class="CartaTH">Elixir Cost</th>
+                                                                    <th class="CartaTH">Rarity</th>
+                                                                    <th class="CartaTH">Gender</th>
+                                                                    <th class="CartaTH">Type</th>
+                                                                    <th class="CartaTH">Launch Date</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr class="Mae">
 
-                                                            <td>
-                                                            <div class="wrapImgCard">
-                                                                <img src="${correctImg}" alt="carta" id="cardImage" class="cardImage"/>
-                                                            </div>
-                                                            </td>
-                                                            <td class="CartaTD" id="maxEL${round}" ><p>${corrTemEvo}</p></td>
-                                                            <td class="CartaTD" id="custoEl${round}" ><p>${correctEC}</p></td>
-                                                            <td class="CartaTD" id="raridade${round}" ><p>${correctRar}</p></td>
-                                                            <td class="CartaTD" id="gender${round}" ><p>${correctGen}</p></td>
-                                                            <td class="CartaTD" id="type${round}" ><p>${correctTyp}</p></td>
-                                                            <td class="CartaTD" id="launchDate${round}" ><p>${correctLD}</p></td>
-                                                    </tr>`;
+                                                                <td>
+                                                                <div class="wrapImgCard">
+                                                                    <img src="${correctImg}" alt="card" id="cardImage" class="cardImage"/>
+                                                                     <span class="cardName">${correctName}</span>
+                                                                </div>
+                                                                </td>
+                                                                <td class="CartaTD" id="maxEL${round}" >${corrTemEvo}</td>
+                                                                <td class="CartaTD" id="custoEl${round}" ><p>${correctEC}</p></td>
+                                                                <td class="CartaTD" id="raridade${round}" ><p>${correctRar}</p></td>
+                                                                <td class="CartaTD" id="gender${round}" ><p>${correctGen}</p></td>
+                                                                <td class="CartaTD" id="type${round}" ><p>${correctTyp}</p></td>
+                                                                <td class="CartaTD" id="launchDate${round}" ><p>${correctLD}</p></td>
+                                                        </tr>`;
                 tableBody.append(codigoFim);
 
                 document.getElementById(`maxEL${round}`).style.backgroundColor = "blue";
@@ -470,6 +440,11 @@
                 document.getElementById(`type${round}`).style.backgroundColor = "blue";
                 document.getElementById(`launchDate${round}`).style.backgroundColor = "blue";
 
+                // Faz a página rolar para baixo
+                window.scrollBy({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
             }
 
         });
