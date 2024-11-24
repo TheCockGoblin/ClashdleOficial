@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\",
+  "WorkspaceRootPath": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialtest\\clashclash\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialtest\\clashclash\\views\\unlimited\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialgdfgdf\\clashclash\\views\\unlimited\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\unlimited\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialtest\\clashclash\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialgdfgdf\\clashclash\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialgdfgdf\\clashclash\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialtest\\clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialgdfgdf\\clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\wwwroot\\css\\paginas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialtest\\clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|c:\\users\\romeu\\source\\repos\\clashdleoficialgdfgdf\\clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D94A6BE0-68AD-4184-983F-121958DB062C}|clashclash\\clashclash.csproj|solutionrelative:clashclash\\views\\daily\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -30,15 +30,15 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "clashclash\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "clashclash\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -49,24 +49,23 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "clashclash\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\wwwroot\\css\\site.css",
               "RelativeToolTip": "clashclash\\wwwroot\\css\\site.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-21T13:19:18.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T13:19:18.925Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\Views\\Unlimited\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\Views\\Unlimited\\Index.cshtml",
               "RelativeDocumentMoniker": "clashclash\\Views\\Unlimited\\Index.cshtml",
-              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\Views\\Unlimited\\Index.cshtml",
+              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\Views\\Unlimited\\Index.cshtml",
               "RelativeToolTip": "clashclash\\Views\\Unlimited\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-19T19:16:38.431Z",
               "EditorCaption": ""
@@ -75,9 +74,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\Views\\Daily\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\Views\\Daily\\Index.cshtml",
               "RelativeDocumentMoniker": "clashclash\\Views\\Daily\\Index.cshtml",
-              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\Views\\Daily\\Index.cshtml",
+              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\Views\\Daily\\Index.cshtml",
               "RelativeToolTip": "clashclash\\Views\\Daily\\Index.cshtml",
               "ViewState": "AQIAAKoBAAAAAAAAAAAzwMUBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -87,14 +86,13 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "paginas.css",
-              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\wwwroot\\css\\paginas.css",
+              "DocumentMoniker": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\wwwroot\\css\\paginas.css",
               "RelativeDocumentMoniker": "clashclash\\wwwroot\\css\\paginas.css",
-              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialTest\\clashclash\\wwwroot\\css\\paginas.css",
+              "ToolTip": "C:\\Users\\romeu\\source\\repos\\ClashdleOficialgdfgdf\\clashclash\\wwwroot\\css\\paginas.css",
               "RelativeToolTip": "clashclash\\wwwroot\\css\\paginas.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAN0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-21T13:19:15.005Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-21T13:19:15.005Z"
             }
           ]
         }

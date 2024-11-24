@@ -135,6 +135,7 @@
                 url: '@Url.Action("GetRandCard", "Card")',
                 type: 'GET',
                 success: function (data) {
+                    correctName = data.name;
                     correctId = data.id;
                     correctML = data.maxlevel;
                     correctMEL = data.maxevolutionlevel;
